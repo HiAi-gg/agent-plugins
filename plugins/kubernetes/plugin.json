@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kubernetes",
+  "version": "0.0.1",
+  "description": "Inspect and diagnose Kubernetes clusters: pods, resources, events, logs, and health — via a trusted read-only Kubernetes MCP server plus workflow skills.",
+  "author": {
+    "name": "HiAI",
+    "url": "https://github.com/HiAi-gg"
+  },
+  "homepage": "https://github.com/HiAi-gg/agent-plugin-kubernetes",
+  "repository": "https://github.com/HiAi-gg/agent-plugin-kubernetes",
+  "license": "MIT",
+  "keywords": [
+    "kubernetes",
+    "k8s",
+    "kubectl",
+    "devops",
+    "mcp",
+    "agent-plugins"
+  ]
+}

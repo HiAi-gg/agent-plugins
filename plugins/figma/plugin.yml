@@ -1,0 +1,34 @@
+name: figma
+version: 0.0.1
+description: "Bring Figma design context into agent workflows: inspect design context, implement from design, map components, and compare code to design — via Figma's official MCP server."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-figma
+repository: https://github.com/HiAi-gg/agent-plugin-figma
+license: MIT
+keywords:
+  - figma
+  - design
+  - design-tokens
+  - components
+  - mcp
+  - agent-plugins
+readme: true
+skills:
+  - name: inspect-design-context
+    description: "Extract design context from a Figma file through the official Figma MCP: design tokens, variables, components, and layout structure for a selected frame or node. Use when implementing a design, checking design tokens, or understanding a Figma screen's structure."
+    body-file: skills-src/figma/inspect-design-context.md
+  - name: implement-from-design
+    description: "Implement a UI from a Figma design: fetch design context, map to the project's framework and design system, and verify against the design. Use when the user provides a Figma link and asks for the implementation."
+    body-file: skills-src/figma/implement-from-design.md
+  - name: map-design-components
+    description: "Map the components in a Figma file to the project's code components: identify reusable components, their properties, and where they are used. Use when building a design system, checking component coverage, or planning which components to extract or reuse."
+    body-file: skills-src/figma/map-design-components.md
+  - name: compare-code-to-design
+    description: "Compare implemented UI code against its Figma design: fetch the design context and screenshot, inspect the implementation, and report visual/behavioral differences. Use when a feature was built from a design and needs verification, or when design and implementation drift."
+    body-file: skills-src/figma/compare-code-to-design.md
+mcp:
+  figma:
+    type: streamable-http
+    url: "https://mcp.figma.com/mcp"

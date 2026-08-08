@@ -1,0 +1,34 @@
+name: notion
+version: 0.0.1
+description: "Research and summarize a Notion workspace: find pages, gather context, and prepare project updates — via Notion's official hosted MCP server."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-notion
+repository: https://github.com/HiAi-gg/agent-plugin-notion
+license: MIT
+keywords:
+  - notion
+  - workspace
+  - knowledge
+  - project
+  - mcp
+  - agent-plugins
+readme: true
+skills:
+  - name: research-workspace
+    description: "Search and read content in a Notion workspace to answer questions: find pages, databases, and connected sources, and extract the relevant information. Use when the user asks what is in their Notion workspace or needs information from Notion."
+    body-file: skills-src/notion/research-workspace.md
+  - name: find-related-pages
+    description: "Find pages in a Notion workspace related to a topic or page: by search, links, tags, or database relations. Use when the user needs a set of related documents, cross-references, or context around a project."
+    body-file: skills-src/notion/find-related-pages.md
+  - name: summarize-project
+    description: "Summarize a project from its Notion pages: gather the project's pages and databases, extract status, decisions, and open items, and produce a concise project summary. Use when asked for a project status update or overview from Notion."
+    body-file: skills-src/notion/summarize-project.md
+  - name: prepare-project-update
+    description: "Draft a project update for Notion: gather the current state, structure the update content, and prepare it for the user to review before any content is created or modified. Use when the user wants to post or update a project status page."
+    body-file: skills-src/notion/prepare-project-update.md
+mcp:
+  notion:
+    type: streamable-http
+    url: "https://mcp.notion.com/mcp"

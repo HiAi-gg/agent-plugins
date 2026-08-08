@@ -1,0 +1,26 @@
+---
+name: Bug report
+about: Report a bug in a plugin, skill, or the bundled PostgreSQL MCP
+title: "[plugin] short description"
+labels: bug
+assignees: ""
+---
+
+**Plugin**: (which plugin)
+
+**Describe the bug**
+
+**To reproduce**
+Steps to reproduce the behavior.
+
+**Expected behavior**
+
+**Actual behavior**
+
+**Environment**
+- Client (VS Code / Cursor / Codex / other):
+- Plugin version:
+- PostgreSQL version (if postgresql):
+- OS:
+
+**Additional context**

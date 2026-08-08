@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "redis",
+  "version": "0.0.1",
+  "description": "Inspect and work with Redis: keys, values, TTLs, hashes, lists, sets, streams, memory, and diagnostics via Redis' official MCP server.",
+  "author": {
+    "name": "HiAI",
+    "url": "https://github.com/HiAi-gg"
+  },
+  "homepage": "https://github.com/HiAi-gg/agent-plugin-redis",
+  "repository": "https://github.com/HiAi-gg/agent-plugin-redis",
+  "license": "MIT",
+  "keywords": [
+    "redis",
+    "cache",
+    "key-value",
+    "streams",
+    "memory",
+    "mcp",
+    "agent-plugins"
+  ]
+}

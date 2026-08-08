@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "cloudflare",
+  "version": "0.0.1",
+  "description": "Inspect and debug Cloudflare: Workers, DNS, request handling, and configuration — via Cloudflare's official Code Mode MCP server.",
+  "author": {
+    "name": "HiAI",
+    "url": "https://github.com/HiAi-gg"
+  },
+  "homepage": "https://github.com/HiAi-gg/agent-plugin-cloudflare",
+  "repository": "https://github.com/HiAi-gg/agent-plugin-cloudflare",
+  "license": "MIT",
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "dns",
+    "cdn",
+    "mcp",
+    "agent-plugins"
+  ]
+}

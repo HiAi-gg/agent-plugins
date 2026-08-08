@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Temp / local
+.tmp/
+temp/
+.temp/
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Archives (packaged plugin archives)
+*.tgz
+*.tar.gz
+*.zip
+
+# Bun
+# bun.lock (Bun's current lockfile) is committed where a package has one
+# (e.g. plugins/postgresql/packages/postgres-mcp/bun.lock).
+bun.lockb
+
+# Test artifacts
+test-results/
+playwright-report/
+
+# NOTE: plugin.json, plugin.yml, mcp.json and SKILL.md are intentional plugin
+# distribution artifacts and must NEVER be ignored.

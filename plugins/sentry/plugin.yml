@@ -1,0 +1,34 @@
+name: sentry
+version: 0.0.1
+description: "Investigate and triage production errors with Sentry: issues, events, regressions, and performance — via Sentry's official hosted MCP endpoint."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-sentry
+repository: https://github.com/HiAi-gg/agent-plugin-sentry
+license: MIT
+keywords:
+  - sentry
+  - error-tracking
+  - monitoring
+  - performance
+  - mcp
+  - agent-plugins
+readme: true
+skills:
+  - name: triage-sentry-issue
+    description: "Triage a Sentry issue: assess impact, frequency, affected users, and severity from issue metadata, then recommend a priority. Use when asked what to fix first or whether a Sentry error is serious."
+    body-file: skills-src/sentry/triage-sentry-issue.md
+  - name: investigate-regression
+    description: "Determine whether a Sentry issue is a regression and find what changed: compare event timing against releases, find the introducing commit or deploy, and narrow the cause. Use when an error spiked or reappeared after a deploy."
+    body-file: skills-src/sentry/investigate-regression.md
+  - name: analyze-error
+    description: "Debug a production error end to end from a Sentry issue: read the events, stack and context, breadcrumbs, and values, then produce a diagnosis with a proposed next action. Use when asked to root-cause a production exception."
+    body-file: skills-src/sentry/analyze-error.md
+  - name: investigate-performance
+    description: "Analyze a Sentry trace or performance span to find the slow or failing step in a request: spans, durations, dependencies, and errors. Use when investigating latency, timeouts, or which service a failure originates from."
+    body-file: skills-src/sentry/investigate-performance.md
+mcp:
+  sentry:
+    type: streamable-http
+    url: "https://mcp.sentry.dev/mcp"

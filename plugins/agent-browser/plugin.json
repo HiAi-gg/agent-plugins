@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "agent-browser",
+  "version": "0.0.1",
+  "description": "Browse, test, and debug web pages with the agent-browser CLI: agent-native browser automation with focused workflow skills.",
+  "author": {
+    "name": "HiAI",
+    "url": "https://github.com/HiAi-gg"
+  },
+  "homepage": "https://github.com/HiAi-gg/agent-plugin-agent-browser",
+  "repository": "https://github.com/HiAi-gg/agent-plugin-agent-browser",
+  "license": "MIT",
+  "keywords": [
+    "agent-browser",
+    "browser",
+    "automation",
+    "web",
+    "testing",
+    "agent-plugins"
+  ]
+}

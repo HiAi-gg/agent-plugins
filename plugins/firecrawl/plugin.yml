@@ -1,0 +1,39 @@
+name: firecrawl
+version: 0.0.1
+description: "Search, scrape, crawl, and extract from the web with Firecrawl's official MCP server, with focused workflow skills."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-firecrawl
+repository: https://github.com/HiAi-gg/agent-plugin-firecrawl
+license: MIT
+keywords:
+  - firecrawl
+  - web
+  - search
+  - scrape
+  - crawl
+  - extract
+  - mcp
+  - agent-plugins
+readme: true
+skills:
+  - name: research-web
+    description: "Research a topic on the web with Firecrawl search: run searches, synthesize findings from results, and cite sources. Use when the agent needs current web information, competitive research, or to answer a question that requires up-to-date web sources."
+    body-file: skills-src/firecrawl/research-web.md
+  - name: scrape-page
+    description: "Scrape a web page into clean, agent-readable content with Firecrawl. Use when the agent needs the full content of a specific page (docs, articles, reference pages) for reading, extraction, or summarization."
+    body-file: skills-src/firecrawl/scrape-page.md
+  - name: crawl-site
+    description: "Crawl a website's pages with Firecrawl to inventory content, find broken links, or gather a corpus. Use when the agent needs to understand a site's structure, find all pages under a path, or collect a set of pages for analysis."
+    body-file: skills-src/firecrawl/crawl-site.md
+  - name: extract-structured-data
+    description: "Extract structured data from web pages or a set of pages with Firecrawl. Use when the agent needs fields, tables, or structured records from web content (pricing, listings, specs) rather than free text."
+    body-file: skills-src/firecrawl/extract-structured-data.md
+mcp:
+  firecrawl:
+    type: stdio
+    command: npx
+    args:
+      - "-y"
+      - "firecrawl-mcp@3.23.4"

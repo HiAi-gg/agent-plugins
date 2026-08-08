@@ -1,0 +1,36 @@
+name: kubernetes
+version: 0.0.1
+description: "Inspect and diagnose Kubernetes clusters: pods, resources, events, logs, and health — via a trusted read-only Kubernetes MCP server plus workflow skills."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-kubernetes
+repository: https://github.com/HiAi-gg/agent-plugin-kubernetes
+license: MIT
+keywords:
+  - kubernetes
+  - k8s
+  - kubectl
+  - devops
+  - mcp
+  - agent-plugins
+readme: true
+skills:
+  - name: diagnose-pod
+    description: "Debug a failing, unhealthy, CrashLoopBackOff, or ImagePullBackOff Kubernetes pod. Use when a pod is not Ready, restarting, stuck in Pending, or when a workload is misbehaving."
+    body-file: skills-src/kubernetes/diagnose-pod.md
+  - name: review-cluster
+    description: "Perform a read-only health review of a Kubernetes cluster or namespace: node status, workload state, resource pressure, events, and obvious misconfigurations. Use when asked for an overall cluster or namespace health assessment."
+    body-file: skills-src/kubernetes/review-cluster.md
+  - name: explain-kubernetes-resource
+    description: "Explain what a Kubernetes resource does, how its spec maps to runtime objects, and how workloads relate (Deployments, Services, Ingress, ConfigMaps, Secrets, PVCs). Use when the user asks what a YAML manifest means, what a resource does, or how objects connect."
+    body-file: skills-src/kubernetes/explain-kubernetes-resource.md
+mcp:
+  kubernetes:
+    type: stdio
+    command: npx
+    args:
+      - "-y"
+      - "kubernetes-mcp-server@0.0.65"
+      - "--read-only"
+      - "--disable-multi-cluster"

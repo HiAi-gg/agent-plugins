@@ -1,0 +1,34 @@
+name: cloudflare
+version: 0.0.1
+description: "Inspect and debug Cloudflare: Workers, DNS, request handling, and configuration — via Cloudflare's official Code Mode MCP server."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-cloudflare
+repository: https://github.com/HiAi-gg/agent-plugin-cloudflare
+license: MIT
+keywords:
+  - cloudflare
+  - workers
+  - dns
+  - cdn
+  - mcp
+  - agent-plugins
+readme: true
+skills:
+  - name: debug-worker
+    description: "Debug a Cloudflare Worker: check deployment state, inspect logs, find errors, and narrow the cause. Use when a Worker misbehaves, returns errors, or after a failed deploy."
+    body-file: skills-src/cloudflare/debug-worker.md
+  - name: inspect-dns
+    description: "Inspect DNS records and zone configuration for a Cloudflare zone: list records, check propagation/status, and identify misconfigurations. Use when a domain resolves incorrectly, DNS records look wrong, or before changing DNS."
+    body-file: skills-src/cloudflare/inspect-dns.md
+  - name: investigate-request
+    description: "Investigate how Cloudflare handled a specific request: caching, firewall, Workers, and origin behavior. Use when a request behaves unexpectedly (wrong response, cached content, blocked, or slow)."
+    body-file: skills-src/cloudflare/investigate-request.md
+  - name: review-cloudflare-config
+    description: "Review a Cloudflare account/zone configuration for correctness and security: Workers, DNS, rules, cache, and settings. Use when onboarding to a Cloudflare setup, auditing configuration, or checking for misconfigurations."
+    body-file: skills-src/cloudflare/review-cloudflare-config.md
+mcp:
+  cloudflare:
+    type: streamable-http
+    url: "https://mcp.cloudflare.com/mcp"

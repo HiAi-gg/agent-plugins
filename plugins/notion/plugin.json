@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "notion",
+  "version": "0.0.1",
+  "description": "Research and summarize a Notion workspace: find pages, gather context, and prepare project updates — via Notion's official hosted MCP server.",
+  "author": {
+    "name": "HiAI",
+    "url": "https://github.com/HiAi-gg"
+  },
+  "homepage": "https://github.com/HiAi-gg/agent-plugin-notion",
+  "repository": "https://github.com/HiAi-gg/agent-plugin-notion",
+  "license": "MIT",
+  "keywords": [
+    "notion",
+    "workspace",
+    "knowledge",
+    "project",
+    "mcp",
+    "agent-plugins"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sentry",
+  "version": "0.0.1",
+  "description": "Investigate and triage production errors with Sentry: issues, events, regressions, and performance — via Sentry's official hosted MCP endpoint.",
+  "author": {
+    "name": "HiAI",
+    "url": "https://github.com/HiAi-gg"
+  },
+  "homepage": "https://github.com/HiAi-gg/agent-plugin-sentry",
+  "repository": "https://github.com/HiAi-gg/agent-plugin-sentry",
+  "license": "MIT",
+  "keywords": [
+    "sentry",
+    "error-tracking",
+    "monitoring",
+    "performance",
+    "mcp",
+    "agent-plugins"
+  ]
+}

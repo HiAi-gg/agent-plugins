@@ -1,0 +1,27 @@
+name: agent-browser
+version: 0.0.1
+description: "Browse, test, and debug web pages with the agent-browser CLI: agent-native browser automation with focused workflow skills."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-agent-browser
+repository: https://github.com/HiAi-gg/agent-plugin-agent-browser
+license: MIT
+keywords:
+  - agent-browser
+  - browser
+  - automation
+  - web
+  - testing
+  - agent-plugins
+readme: true
+skills:
+  - name: browse-web
+    description: "Browse and interact with web pages using the agent-browser CLI: open pages, read accessible snapshots, click by ref, fill forms, navigate, and read state. Use when the agent needs to inspect or operate a real web page or web application."
+    body-file: skills-src/agent-browser/browse-web.md
+  - name: test-web-flow
+    description: "Walk a multi-step user flow in a real browser with agent-browser: navigate, fill, submit, verify each step, and report results. Use when asked to verify a signup, checkout, onboarding, or other multi-step web flow."
+    body-file: skills-src/agent-browser/test-web-flow.md
+  - name: debug-web-ui
+    description: "Debug a web UI problem in a real browser with agent-browser: reproduce, read the page state, isolate the failing element or interaction, and report the root cause. Use when a page looks wrong, an interaction misbehaves, or a UI bug needs root-causing."
+    body-file: skills-src/agent-browser/debug-web-ui.md

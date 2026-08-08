@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "context7",
+  "version": "0.0.1",
+  "description": "Current library and framework documentation via Context7's first-party MCP server, with usage-discipline skills for when an agent should consult it.",
+  "author": {
+    "name": "HiAI",
+    "url": "https://github.com/HiAi-gg"
+  },
+  "homepage": "https://github.com/HiAi-gg/agent-plugin-context7",
+  "repository": "https://github.com/HiAi-gg/agent-plugin-context7",
+  "license": "MIT",
+  "keywords": [
+    "context7",
+    "documentation",
+    "libraries",
+    "mcp",
+    "agent-plugins",
+    "docs"
+  ]
+}

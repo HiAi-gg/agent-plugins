@@ -1,0 +1,42 @@
+name: supabase
+version: 0.0.1
+description: "Investigate Supabase-backed apps: schema, data access, RLS, and auth via Supabase's official PostgREST MCP server."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-supabase
+repository: https://github.com/HiAi-gg/agent-plugin-supabase
+license: MIT
+keywords:
+  - supabase
+  - postgrest
+  - database
+  - rls
+  - auth
+  - mcp
+  - agent-plugins
+readme: true
+skills:
+  - name: inspect-schema
+    description: "Inspect a Supabase/PostgREST schema through the official Supabase MCP: list tables, view columns and types, and understand the data model. Use when asked about the structure of a Supabase project's database."
+    body-file: skills-src/supabase/inspect-schema.md
+  - name: review-rls
+    description: "Review Row Level Security posture for a Supabase project: which tables have RLS enabled, which policies exist, and whether anon/authenticated access is over-permissive. Use when auditing a Supabase app's access control or before exposing a table via the API."
+    body-file: skills-src/supabase/review-rls.md
+  - name: debug-auth
+    description: "Debug Supabase authentication issues: signup, sign-in, session handling, and RLS access problems from the client perspective. Use when a user cannot sign in, sessions drop, or authenticated requests return 401/403 or empty results."
+    body-file: skills-src/supabase/debug-auth.md
+  - name: investigate-supabase-app
+    description: "Investigate a Supabase-backed app end to end: schema, data access, RLS, and auth working together. Use when a feature is broken, data is missing, or the app behaves unexpectedly and the cause may be in the Supabase backend."
+    body-file: skills-src/supabase/investigate-supabase-app.md
+mcp:
+  supabase:
+    type: stdio
+    command: npx
+    args:
+      - "-y"
+      - "@supabase/mcp-server-postgrest@0.1.1"
+      - "--apiUrl"
+      - "https://your-project-ref.supabase.co/rest/v1"
+      - "--schema"
+      - "public"

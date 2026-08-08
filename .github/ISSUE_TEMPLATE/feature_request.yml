@@ -1,0 +1,21 @@
+---
+name: Feature request
+about: Suggest an improvement to an existing plugin
+title: "[plugin] short description"
+labels: enhancement
+assignees: ""
+---
+
+**Plugin**: (which plugin)
+
+**Is your feature request related to a problem?**
+A clear and concise description.
+
+**Describe the solution you would like**
+
+**Describe alternatives you considered**
+
+**Additional context**
+
+Note: new plugins require explicit approval and are handled through
+discussion, not feature requests.

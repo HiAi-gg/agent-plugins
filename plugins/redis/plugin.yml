@@ -1,0 +1,41 @@
+name: redis
+version: 0.0.1
+description: "Inspect and work with Redis: keys, values, TTLs, hashes, lists, sets, streams, memory, and diagnostics via Redis' official MCP server."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-redis
+repository: https://github.com/HiAi-gg/agent-plugin-redis
+license: MIT
+keywords:
+  - redis
+  - cache
+  - key-value
+  - streams
+  - memory
+  - mcp
+  - agent-plugins
+readme: true
+skills:
+  - name: inspect-redis
+    description: "Inspect Redis keys and values: scan keys by pattern, read values of any type, check TTLs and types, and summarize what is stored. Use when asked what is in Redis, whether a key exists, or why a value looks wrong."
+    body-file: skills-src/redis/inspect-redis.md
+  - name: diagnose-redis-data
+    description: "Diagnose Redis data problems: missing keys, wrong types, stale or expiring values, and mismatches between writers and readers. Use when an application cannot find a value, reads the wrong one, or Redis behavior is surprising."
+    body-file: skills-src/redis/diagnose-redis-data.md
+  - name: inspect-streams
+    description: "Inspect Redis streams: read entries, check stream length and consumer groups, and understand consumer group state. Use when debugging stream consumers, checking what was published, or verifying a stream-based pipeline."
+    body-file: skills-src/redis/inspect-streams.md
+  - name: analyze-memory-state
+    description: "Analyze Redis memory usage: identify the biggest keys, largest data structures, key counts per type, and candidates for eviction or expiry. Use when Redis memory is high, evictions are occurring, or when optimizing storage."
+    body-file: skills-src/redis/analyze-memory-state.md
+mcp:
+  redis:
+    type: stdio
+    command: uvx
+    args:
+      - "--from"
+      - "redis-mcp-server==0.5.1"
+      - "redis-mcp-server"
+      - "--url"
+      - "redis://localhost:6379/0"

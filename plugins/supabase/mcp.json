@@ -1,0 +1,17 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "supabase": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-postgrest@0.1.1",
+        "--apiUrl",
+        "https://your-project-ref.supabase.co/rest/v1",
+        "--schema",
+        "public"
+      ]
+    }
+  }
+}

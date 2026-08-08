@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "figma",
+  "version": "0.0.1",
+  "description": "Bring Figma design context into agent workflows: inspect design context, implement from design, map components, and compare code to design — via Figma's official MCP server.",
+  "author": {
+    "name": "HiAI",
+    "url": "https://github.com/HiAi-gg"
+  },
+  "homepage": "https://github.com/HiAi-gg/agent-plugin-figma",
+  "repository": "https://github.com/HiAi-gg/agent-plugin-figma",
+  "license": "MIT",
+  "keywords": [
+    "figma",
+    "design",
+    "design-tokens",
+    "components",
+    "mcp",
+    "agent-plugins"
+  ]
+}

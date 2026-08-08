@@ -1,0 +1,34 @@
+name: github
+version: 0.0.1
+description: "Inspect and work with GitHub: pull requests, issues, CI, and repositories via GitHub's official MCP server, with focused workflow skills."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-github
+repository: https://github.com/HiAi-gg/agent-plugin-github
+license: MIT
+keywords:
+  - github
+  - pull-requests
+  - issues
+  - ci
+  - mcp
+  - agent-plugins
+readme: true
+skills:
+  - name: review-pull-request
+    description: "Review a GitHub pull request systematically: read the diff, changed files, review comments, CI status, and related issues, then produce a structured review. Use when asked to review a PR, assess merge readiness, or understand what a PR changes."
+    body-file: skills-src/github/review-pull-request.md
+  - name: triage-issue
+    description: "Triage GitHub issues in a repository: classify, prioritize, deduplicate, and route them with evidence. Use when asked to sort an issue backlog, identify duplicates, label issues, or decide what to work on next."
+    body-file: skills-src/github/triage-issue.md
+  - name: investigate-ci
+    description: "Investigate GitHub Actions workflow failures: find the failed run, read the failing job step, examine logs, and identify the root cause. Use when a CI run fails, a workflow does not trigger, or a check is stuck or skipped."
+    body-file: skills-src/github/investigate-ci.md
+  - name: explore-repository
+    description: "Produce a structured read-only review of a GitHub repository: purpose, structure, health signals, dependencies, and contribution state. Use when onboarding to an unfamiliar repository, evaluating a repo for adoption, or preparing a summary."
+    body-file: skills-src/github/explore-repository.md
+mcp:
+  github:
+    type: streamable-http
+    url: "https://api.githubcopilot.com/mcp/"

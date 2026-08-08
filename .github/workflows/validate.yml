@@ -1,0 +1,53 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  static-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Verify Builder version
+        run: bunx @hiai-gg/agent-plugins-builder --version
+
+      - name: Builder validation (all 13 plugins)
+        run: |
+          set -e
+          for p in plugins/*/; do
+            name=$(basename "$p")
+            bunx @hiai-gg/agent-plugins-builder package "plugins/$name" --dry-run
+          done
+
+      - name: Builder reproducibility (no drift)
+        run: |
+          set -e
+          for p in plugins/*/; do
+            name=$(basename "$p")
+            bunx @hiai-gg/agent-plugins-builder create \
+              --config "plugins/$name/plugin.yml" \
+              --output "/tmp/regen-$name"
+            diff "/tmp/regen-$name/plugin.json" "plugins/$name/plugin.json"
+            if [ -f "plugins/$name/mcp.json" ]; then
+              diff "/tmp/regen-$name/mcp.json" "plugins/$name/mcp.json"
+            fi
+          done
+
+      - name: Basic repository structure
+        run: |
+          count=$(ls -d plugins/*/ | wc -l)
+          test "$count" -eq 13
+          echo "13 active plugins confirmed"
+
+      - name: Secret scan
+        run: |
+          ! grep -rniE "(api[_-]?key|secret|token|password|BEGIN [A-Z ]*PRIVATE)" \
+            --include="plugin.json" --include="mcp.json" plugins/ \
+            | grep -viE "api-key|api key|no tokens|no api key|anonymous|api token" | grep -q .

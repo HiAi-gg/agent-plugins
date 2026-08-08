@@ -1,0 +1,43 @@
+name: release-check
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly release-readiness check
+    - cron: "17 3 * * 1"
+
+jobs:
+  release-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Version consistency
+        run: |
+          set -e
+          for p in plugins/*/; do
+            name=$(basename "$p")
+            v=$(python3 -c "import json; print(json.load(open('plugins/$name/plugin.json'))['version'])")
+            echo "$name: $v"
+          done
+
+      - name: Builder reproducibility
+        run: |
+          set -e
+          for p in plugins/*/; do
+            name=$(basename "$p")
+            bunx @hiai-gg/agent-plugins-builder create \
+              --config "plugins/$name/plugin.yml" \
+              --output "/tmp/regen-$name"
+            diff "/tmp/regen-$name/plugin.json" "plugins/$name/plugin.json"
+          done
+
+      - name: PostgreSQL unit tests
+        run: |
+          cd plugins/postgresql/packages/postgres-mcp
+          bun install --frozen-lockfile
+          bun test

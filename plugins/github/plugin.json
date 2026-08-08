@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "github",
+  "version": "0.0.1",
+  "description": "Inspect and work with GitHub: pull requests, issues, CI, and repositories via GitHub's official MCP server, with focused workflow skills.",
+  "author": {
+    "name": "HiAI",
+    "url": "https://github.com/HiAi-gg"
+  },
+  "homepage": "https://github.com/HiAi-gg/agent-plugin-github",
+  "repository": "https://github.com/HiAi-gg/agent-plugin-github",
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "pull-requests",
+    "issues",
+    "ci",
+    "mcp",
+    "agent-plugins"
+  ]
+}

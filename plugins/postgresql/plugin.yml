@@ -1,0 +1,40 @@
+name: postgresql
+version: 0.0.1
+description: "Safe, read-only PostgreSQL inspection, query diagnosis, performance analysis, and database health workflows for AI agents, with a bundled HiAI PostgreSQL MCP server."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-postgresql
+repository: https://github.com/HiAi-gg/agent-plugin-postgresql
+license: MIT
+keywords:
+  - postgresql
+  - postgres
+  - sql
+  - database
+  - mcp
+  - agent-plugins
+readme: true
+skills:
+  - name: inspect-database
+    description: "Understand an unfamiliar PostgreSQL database: identity, schemas, important tables, relationships, indexes, and sizes. Use when onboarding to a database, mapping its structure, or before writing queries against it."
+    body-file: skills-src/postgresql/inspect-database.md
+  - name: diagnose-query
+    description: "Diagnose why a PostgreSQL query is slow or suspicious: understand the SQL, inspect tables and indexes, EXPLAIN JSON, and propose measured next steps. Use when a query is slow, timing out, or has a suspicious plan."
+    body-file: skills-src/postgresql/diagnose-query.md
+  - name: diagnose-performance
+    description: "Diagnose PostgreSQL performance issues: active sessions, long transactions, locks, table health, sizes, and pg_stat_statements. Use when the database is slow, under load, or when asked for a performance investigation."
+    body-file: skills-src/postgresql/diagnose-performance.md
+  - name: diagnose-locks
+    description: "Diagnose PostgreSQL lock contention: detect blocked sessions, find the blocking session, identify the lock, and explain the cause. Use when queries hang, transactions stall, or the database appears stuck."
+    body-file: skills-src/postgresql/diagnose-locks.md
+  - name: review-database-health
+    description: "Produce a compact PostgreSQL health review: configuration signals, capacity, maintenance, locks/activity, large relations, and query statistics. Use when asked for an overall database health assessment or a pre-maintenance check."
+    body-file: skills-src/postgresql/review-database-health.md
+mcp:
+  postgresql:
+    type: stdio
+    command: bun
+    args:
+      - "run"
+      - "${PLUGIN_ROOT}/packages/postgres-mcp/src/index.ts"

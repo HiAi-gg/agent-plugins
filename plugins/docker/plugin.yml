@@ -1,0 +1,30 @@
+name: docker
+version: 0.0.1
+description: "Inspect, diagnose, and review local Docker environments and Dockerfiles: containers, Compose projects, and best practices — skills-only."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-docker
+repository: https://github.com/HiAi-gg/agent-plugin-docker
+license: MIT
+keywords:
+  - docker
+  - containers
+  - compose
+  - dockerfile
+  - devops
+  - agent-plugins
+readme: true
+skills:
+  - name: inspect-docker-environment
+    description: "Produce a read-only inventory of a local Docker environment: running and stopped containers, images, networks, volumes, and disk usage. Use when getting oriented in an unfamiliar Docker setup or before proposing container changes."
+    body-file: skills-src/docker/inspect-docker-environment.md
+  - name: diagnose-container
+    description: "Diagnose why a Docker container is failing, unhealthy, crash-looping, or not starting. Use when a container exits with an error, is restarting, reports unhealthy, or a service is unreachable."
+    body-file: skills-src/docker/diagnose-container.md
+  - name: diagnose-compose
+    description: "Explain and inspect a docker compose project: services, networks, volumes, dependencies, overrides, and effective merged configuration. Use when the user asks what a compose file does, how services connect, or why a compose-based stack is misconfigured."
+    body-file: skills-src/docker/diagnose-compose.md
+  - name: review-dockerfile
+    description: "Review a Dockerfile for correctness, best practices, and security: base image, layers, caching, secrets, and image size. Use when writing, auditing, or optimizing a Dockerfile."
+    body-file: skills-src/docker/review-dockerfile.md

@@ -1,0 +1,34 @@
+name: context7
+version: 0.0.1
+description: "Current library and framework documentation via Context7's first-party MCP server, with usage-discipline skills for when an agent should consult it."
+author:
+  name: HiAI
+  url: https://github.com/HiAi-gg
+homepage: https://github.com/HiAi-gg/agent-plugin-context7
+repository: https://github.com/HiAi-gg/agent-plugin-context7
+license: MIT
+keywords:
+  - context7
+  - documentation
+  - libraries
+  - mcp
+  - agent-plugins
+  - docs
+readme: true
+skills:
+  - name: research-library-docs
+    description: "Look up current, authoritative documentation for a library or framework before implementing with it. Use when about to use an unfamiliar library, a fast-changing API, or when configuration behavior is uncertain."
+    body-file: skills-src/context7/research-library-docs.md
+  - name: verify-api-usage
+    description: "Verify that code uses a library's API correctly against current documentation before considering it done. Use after writing code against a library, when a review raises API-usage doubts, or when a build/type error suggests the API changed."
+    body-file: skills-src/context7/verify-api-usage.md
+  - name: check-current-library-version
+    description: "Check the current stable version of a library or framework and what changed recently, before recommending upgrades or writing version-sensitive code. Use when a version bump is proposed, when troubleshooting a version-specific bug, or when the project's pinned version looks old."
+    body-file: skills-src/context7/check-current-library-version.md
+mcp:
+  context7:
+    type: stdio
+    command: npx
+    args:
+      - "-y"
+      - "@upstash/context7-mcp@3.2.5"
