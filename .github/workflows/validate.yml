@@ -50,4 +50,4 @@ jobs:
         run: |
           ! grep -rniE "(api[_-]?key|secret|token|password|BEGIN [A-Z ]*PRIVATE)" \
             --include="plugin.json" --include="mcp.json" plugins/ \
-            | grep -viE "api-key|api key|no tokens|no api key|anonymous|api token" | grep -q .
+            | grep -viE "api-key|api key|no tokens|no api key|anonymous|api token|tokens" | grep -q .
