@@ -65,8 +65,11 @@ close    → session closed
 
 1. Install the CLI: `bun add -g agent-browser` (or the upstream's documented
    method), then `agent-browser install`.
-2. Copy the plugin directory into your Agent Plugins client's plugin folder, or
-   use your client's plugin install flow.
+2. Copy the plugin's **runtime files** (`plugin.json`, `skills/`, `README.md`,
+   `LICENSE` — this plugin has no `mcp.json`) into your Agent Plugins client's
+   plugin folder, or use your client's plugin install flow. Do **not** copy the
+   authoring sources (`plugin.yml`, `skills-src/`, `docs/`) — see the collection
+   README for the full boundary.
 3. The `browse-web` skill runs `agent-browser doctor` first and explains the
    install step if the browser is missing.
 
@@ -85,7 +88,7 @@ shell. Pin the CLI version in your environment (the plugin documents `v0.31.x`).
 
 | Component | Version | License | Source |
 |---|---|---|---|
-| agent-browser CLI | `0.31.1` (runtime-verified) | MIT | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) |
+| agent-browser CLI | `0.31.1` (runtime-verified) | Apache-2.0 | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) |
 
 ## Agent Plugins version
 
@@ -111,7 +114,7 @@ mode supported by the CLI.
 
 ## License
 
-MIT. See [LICENSE](LICENSE). The upstream `agent-browser` is MIT
+MIT. See [LICENSE](LICENSE). The upstream `agent-browser` is Apache-2.0
 (vercel-labs); HiAI is not affiliated with or endorsed by Vercel.
 
 ## CHANGELOG

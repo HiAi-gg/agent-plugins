@@ -3,16 +3,6 @@ name: triage-issue
 description: "Triage GitHub issues in a repository: classify, prioritize, deduplicate, and route them with evidence. Use when asked to sort an issue backlog, identify duplicates, label issues, or decide what to work on next."
 ---
 
----
-name: triage-issue
-description: Triage GitHub issues in a repository: classify, prioritize, deduplicate, and route them with evidence. Use when asked to sort an issue backlog, identify duplicates, label issues, or decide what to work on next.
-license: MIT
-compatibility: Requires the github MCP server (GitHub Copilot-hosted, OAuth via client) and read access to the target repository.
-metadata:
-  plugin: github
-  kind: issue-triage
----
-
 # Triage GitHub Issues
 
 Use this skill when an agent must work through an issue backlog: classify,

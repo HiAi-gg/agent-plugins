@@ -3,16 +3,6 @@ name: triage-sentry-issue
 description: "Triage a Sentry issue: assess impact, frequency, affected users, and severity from issue metadata, then recommend a priority. Use when asked what to fix first or whether a Sentry error is serious."
 ---
 
----
-name: triage-sentry-issue
-description: Triage a Sentry issue: assess impact, frequency, affected users, and severity from issue metadata, then recommend a priority. Use when asked what to fix first or whether a Sentry error is serious.
-license: MIT
-compatibility: Requires the sentry MCP server (hosted, OAuth via client) with access to the relevant Sentry organization.
-metadata:
-  plugin: sentry
-  kind: triage
----
-
 # Triage a Sentry Issue
 
 Use this skill when an agent must decide how serious a Sentry issue is and

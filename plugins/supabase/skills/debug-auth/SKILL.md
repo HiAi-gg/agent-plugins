@@ -3,16 +3,6 @@ name: debug-auth
 description: "Debug Supabase authentication issues: signup, sign-in, session handling, and RLS access problems from the client perspective. Use when a user cannot sign in, sessions drop, or authenticated requests return 401/403 or empty results."
 ---
 
----
-name: debug-auth
-description: Debug Supabase authentication issues: signup, sign-in, session handling, and RLS access problems from the client perspective. Use when a user cannot sign in, sessions drop, or authenticated requests return 401/403 or empty results.
-license: MIT
-compatibility: Requires the supabase MCP server configured in this plugin plus knowledge of the app's auth flow (Supabase Auth); some checks need the app's client or dashboard.
-metadata:
-  plugin: supabase
-  kind: auth-debugging
----
-
 # Debug Supabase Authentication
 
 Use this skill when an agent must diagnose why Supabase auth is failing for a

@@ -3,16 +3,6 @@ name: debug-worker
 description: "Debug a Cloudflare Worker: check deployment state, inspect logs, find errors, and narrow the cause. Use when a Worker misbehaves, returns errors, or after a failed deploy."
 ---
 
----
-name: debug-worker
-description: Debug a Cloudflare Worker: check deployment state, inspect logs, find errors, and narrow the cause. Use when a Worker misbehaves, returns errors, or after a failed deploy.
-license: MIT
-compatibility: Requires the cloudflare MCP server configured in this plugin (https://mcp.cloudflare.com/mcp) with OAuth or an API token at the client level.
-metadata:
-  plugin: cloudflare
-  kind: worker-debugging
----
-
 # Debug a Cloudflare Worker
 
 Use this skill when an agent must find out why a Cloudflare Worker is failing,

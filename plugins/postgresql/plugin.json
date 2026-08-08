@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "postgresql",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Safe, read-only PostgreSQL inspection, query diagnosis, performance analysis, and database health workflows for AI agents, with a bundled HiAI PostgreSQL MCP server.",
   "author": {
     "name": "HiAI",

@@ -3,16 +3,6 @@ name: inspect-dns
 description: "Inspect DNS records and zone configuration for a Cloudflare zone: list records, check propagation/status, and identify misconfigurations. Use when a domain resolves incorrectly, DNS records look wrong, or before changing DNS."
 ---
 
----
-name: inspect-dns
-description: Inspect DNS records and zone configuration for a Cloudflare zone: list records, check propagation/status, and identify misconfigurations. Use when a domain resolves incorrectly, DNS records look wrong, or before changing DNS.
-license: MIT
-compatibility: Requires the cloudflare MCP server configured in this plugin (https://mcp.cloudflare.com/mcp) with OAuth or an API token at the client level.
-metadata:
-  plugin: cloudflare
-  kind: dns-inspection
----
-
 # Inspect Cloudflare DNS
 
 Use this skill when an agent must understand or verify the DNS configuration of

@@ -3,16 +3,6 @@ name: summarize-project
 description: "Summarize a project from its Notion pages: gather the project's pages and databases, extract status, decisions, and open items, and produce a concise project summary. Use when asked for a project status update or overview from Notion."
 ---
 
----
-name: summarize-project
-description: Summarize a project from its Notion pages: gather the project's pages and databases, extract status, decisions, and open items, and produce a concise project summary. Use when asked for a project status update or overview from Notion.
-license: MIT
-compatibility: Requires the notion MCP server configured in this plugin (https://mcp.notion.com/mcp) with OAuth completed in the client.
-metadata:
-  plugin: notion
-  kind: summarization
----
-
 # Summarize a Project from Notion
 
 Use this skill when an agent must produce a project overview from Notion

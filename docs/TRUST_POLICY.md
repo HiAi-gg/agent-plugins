@@ -28,10 +28,27 @@ An established community upstream that passed explicit review: meaningful
 adoption, active maintenance, releases, multiple maintainers, clear license,
 CI/tests, credible security posture, and runtime verification by HiAI.
 
-Currently Kubernetes is the **intentional Trust B exception**:
-`containers/kubernetes-mcp-server` (pinned `0.0.65`). It is described
-factually as a "trusted community Kubernetes MCP server", never as official
-Kubernetes or CNCF tooling.
+Two upstreams are **intentional Trust B entries**:
+
+| Plugin | Upstream | Pin |
+|---|---|---|
+| kubernetes | `containers/kubernetes-mcp-server` | `0.0.65` |
+| agent-browser | `vercel-labs/agent-browser` CLI (Apache-2.0) | `0.31.1` |
+
+Kubernetes is described factually as a "trusted community Kubernetes MCP
+server", never as official Kubernetes or CNCF tooling. agent-browser is a
+skills-only plugin over the upstream CLI (no MCP server); it is described as a
+community CLI from the vercel-labs org, never as an official Vercel product.
+
+**Pin status (reviewed 2026-08-08)**: upstream latest is `0.0.66`, which is an
+explicitly breaking release (`feat!(mcp): add 2026-07-28 spec support`). The
+pin is **deliberately held at `0.0.65`**, the version the read-only gate was
+runtime-verified against. The security fixes in `0.0.66` are confined to the
+HTTP/wellknown-proxy surface, which this stdio configuration does not use, and
+no advisory exists against `0.0.65`. Because upstream only patches security
+fixes into the latest release, this pin is re-evaluated at every collection
+release and immediately on any advisory touching the stdio or read-only
+gating surface. Full record: `plugins/kubernetes/docs/UPSTREAM_TRUST.md`.
 
 ## HiAI Native
 

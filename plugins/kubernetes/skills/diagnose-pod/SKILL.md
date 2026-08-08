@@ -3,16 +3,6 @@ name: diagnose-pod
 description: Debug a failing, unhealthy, CrashLoopBackOff, or ImagePullBackOff Kubernetes pod. Use when a pod is not Ready, restarting, stuck in Pending, or when a workload is misbehaving.
 ---
 
----
-name: diagnose-pod
-description: Debug a failing, unhealthy, CrashLoopBackOff, or ImagePullBackOff Kubernetes pod. Use when a pod is not Ready, restarting, stuck in Pending, or when a workload is misbehaving.
-license: MIT
-compatibility: Requires the kubernetes MCP server configured in this plugin (kubernetes-mcp-server@0.0.65, --read-only) or kubectl with a configured kubeconfig and access to the relevant namespace.
-metadata:
-  plugin: kubernetes
-  kind: troubleshooting
----
-
 # Debug a Kubernetes Pod
 
 Use this skill when a pod is failing, crash-looping, not becoming Ready, or

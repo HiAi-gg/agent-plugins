@@ -3,16 +3,6 @@ name: investigate-regression
 description: "Determine whether a Sentry issue is a regression and find what changed: compare event timing against releases, find the introducing commit or deploy, and narrow the cause. Use when an error spiked or reappeared after a deploy."
 ---
 
----
-name: investigate-regression
-description: Determine whether a Sentry issue is a regression and find what changed: compare event timing against releases, find the introducing commit or deploy, and narrow the cause. Use when an error spiked or reappeared after a deploy.
-license: MIT
-compatibility: Requires the sentry MCP server (hosted, OAuth via client) with release/commit metadata access.
-metadata:
-  plugin: sentry
-  kind: regression-analysis
----
-
 # Investigate a Regression
 
 Use this skill when an error spikes, reappears, or starts at a clear point in

@@ -3,16 +3,6 @@ name: investigate-request
 description: "Investigate how Cloudflare handled a specific request: caching, firewall, Workers, and origin behavior. Use when a request behaves unexpectedly (wrong response, cached content, blocked, or slow)."
 ---
 
----
-name: investigate-request
-description: Investigate how Cloudflare handled a specific request: caching, firewall, Workers, and origin behavior. Use when a request behaves unexpectedly (wrong response, cached content, blocked, or slow).
-license: MIT
-compatibility: Requires the cloudflare MCP server configured in this plugin (https://mcp.cloudflare.com/mcp) with OAuth or an API token at the client level; some diagnostics may need zone-level analytics access.
-metadata:
-  plugin: cloudflare
-  kind: request-investigation
----
-
 # Investigate a Request Through Cloudflare
 
 Use this skill when an agent must determine what Cloudflare did with a

@@ -3,16 +3,6 @@ name: scrape-page
 description: Scrape a web page into clean, agent-readable content with Firecrawl. Use when the agent needs the full content of a specific page (docs, articles, reference pages) for reading, extraction, or summarization.
 ---
 
----
-name: scrape-page
-description: Scrape a web page into clean, agent-readable content with Firecrawl. Use when the agent needs the full content of a specific page (docs, articles, reference pages) for reading, extraction, or summarization.
-license: MIT
-compatibility: Requires the firecrawl MCP server configured in this plugin (npx firecrawl-mcp); keyless tier supports scrape without an API key (rate-limited).
-metadata:
-  plugin: firecrawl
-  kind: page-scraping
----
-
 # Scrape a Page with Firecrawl
 
 Use this skill when an agent needs the clean content of a specific URL.

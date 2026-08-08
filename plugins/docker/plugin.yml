@@ -1,5 +1,5 @@
 name: docker
-version: 0.0.1
+version: 0.0.2
 description: "Inspect, diagnose, and review local Docker environments and Dockerfiles: containers, Compose projects, and best practices — skills-only."
 author:
   name: HiAI

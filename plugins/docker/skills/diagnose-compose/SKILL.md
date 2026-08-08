@@ -3,16 +3,6 @@ name: diagnose-compose
 description: "Explain and inspect a docker compose project: services, networks, volumes, dependencies, overrides, and effective merged configuration. Use when the user asks what a compose file does, how services connect, or why a compose-based stack is misconfigured."
 ---
 
----
-name: diagnose-compose
-description: Explain and inspect a docker compose project: services, networks, volumes, dependencies, overrides, and effective merged configuration. Use when the user asks what a compose file does, how services connect, or why a compose-based stack is misconfigured.
-license: MIT
-compatibility: Requires the docker CLI with the compose plugin (docker compose).
-metadata:
-  plugin: docker
-  kind: understanding
----
-
 # Understand a Docker Compose Project
 
 Use this skill when the user wants to know what a compose project contains, how

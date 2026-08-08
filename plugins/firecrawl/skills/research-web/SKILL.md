@@ -3,16 +3,6 @@ name: research-web
 description: "Research a topic on the web with Firecrawl search: run searches, synthesize findings from results, and cite sources. Use when the agent needs current web information, competitive research, or to answer a question that requires up-to-date web sources."
 ---
 
----
-name: research-web
-description: Research a topic on the web with Firecrawl search: run searches, synthesize findings from results, and cite sources. Use when the agent needs current web information, competitive research, or to answer a question that requires up-to-date web sources.
-license: MIT
-compatibility: Requires the firecrawl MCP server configured in this plugin (npx firecrawl-mcp); keyless tier supports search without an API key (rate-limited).
-metadata:
-  plugin: firecrawl
-  kind: web-research
----
-
 # Research the Web with Firecrawl
 
 Use this skill when an agent needs current, web-sourced information — the

@@ -3,16 +3,6 @@ name: review-cloudflare-config
 description: "Review a Cloudflare account/zone configuration for correctness and security: Workers, DNS, rules, cache, and settings. Use when onboarding to a Cloudflare setup, auditing configuration, or checking for misconfigurations."
 ---
 
----
-name: review-cloudflare-config
-description: Review a Cloudflare account/zone configuration for correctness and security: Workers, DNS, rules, cache, and settings. Use when onboarding to a Cloudflare setup, auditing configuration, or checking for misconfigurations.
-license: MIT
-compatibility: Requires the cloudflare MCP server configured in this plugin (https://mcp.cloudflare.com/mcp) with OAuth or an API token at the client level.
-metadata:
-  plugin: cloudflare
-  kind: configuration-review
----
-
 # Review Cloudflare Configuration
 
 Use this skill when an agent must produce a read-only health/config review of a

@@ -3,16 +3,6 @@ name: prepare-project-update
 description: "Draft a project update for Notion: gather the current state, structure the update content, and prepare it for the user to review before any content is created or modified. Use when the user wants to post or update a project status page."
 ---
 
----
-name: prepare-project-update
-description: Draft a project update for Notion: gather the current state, structure the update content, and prepare it for the user to review before any content is created or modified. Use when the user wants to post or update a project status page.
-license: MIT
-compatibility: Requires the notion MCP server configured in this plugin (https://mcp.notion.com/mcp) with OAuth completed in the client.
-metadata:
-  plugin: notion
-  kind: content-preparation
----
-
 # Prepare a Project Update
 
 Use this skill when an agent must draft a project update for a Notion page.

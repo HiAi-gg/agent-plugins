@@ -51,8 +51,11 @@ run shell commands.
 
 ## Installation
 
-Copy the plugin directory into your Agent Plugins client's plugin folder, or use
-your client's plugin install flow. No build step is required, and no external
+Copy the plugin's **runtime files** (`plugin.json`, `skills/`, `README.md`,
+`LICENSE` — this plugin has no `mcp.json`) into your Agent Plugins client's
+plugin folder, or use your client's plugin install flow. Do **not** copy the
+authoring sources (`plugin.yml`, `skills-src/`, `docs/`) — see the collection
+README for the full boundary. No build step is required, and no external
 packages are fetched.
 
 ## Examples

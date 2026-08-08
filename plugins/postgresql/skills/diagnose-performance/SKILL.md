@@ -1,6 +1,6 @@
 ---
 name: diagnose-performance
-description: Diagnose PostgreSQL performance issues: active sessions, long transactions, locks, table health, sizes, and pg_stat_statements. Use when the database is slow, under load, or when asked for a performance investigation.
+description: "Diagnose PostgreSQL performance issues: active sessions, long transactions, locks, table health, sizes, and pg_stat_statements. Use when the database is slow, under load, or when asked for a performance investigation."
 license: MIT
 compatibility: Requires the postgresql MCP server bundled with this plugin and a DATABASE_URL at the client level.
 metadata:
@@ -68,3 +68,4 @@ Present findings ranked by impact:
 - Distinguish evidence (tool output) from hypotheses in every finding.
 - Never recommend `VACUUM FULL` or `pg_terminate_backend` as automatic
   actions; propose them only as recommendations requiring user intent.
+

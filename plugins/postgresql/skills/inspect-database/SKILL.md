@@ -1,6 +1,6 @@
 ---
 name: inspect-database
-description: Understand an unfamiliar PostgreSQL database: identity, schemas, important tables, relationships, indexes, and sizes. Use when onboarding to a database, mapping its structure, or before writing queries against it.
+description: "Understand an unfamiliar PostgreSQL database: identity, schemas, important tables, relationships, indexes, and sizes. Use when onboarding to a database, mapping its structure, or before writing queries against it."
 license: MIT
 compatibility: Requires the postgresql MCP server bundled with this plugin (bun run ${PLUGIN_ROOT}/packages/postgres-mcp) and a DATABASE_URL at the client level.
 metadata:
@@ -74,3 +74,4 @@ Give a concise database map:
 
 - Read-only: never query user data rows unless asked.
 - Bound everything; do not dump whole tables.
+

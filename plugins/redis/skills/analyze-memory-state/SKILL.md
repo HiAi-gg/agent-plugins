@@ -3,16 +3,6 @@ name: analyze-memory-state
 description: "Analyze Redis memory usage: identify the biggest keys, largest data structures, key counts per type, and candidates for eviction or expiry. Use when Redis memory is high, evictions are occurring, or when optimizing storage."
 ---
 
----
-name: analyze-memory-state
-description: Analyze Redis memory usage: identify the biggest keys, largest data structures, key counts per type, and candidates for eviction or expiry. Use when Redis memory is high, evictions are occurring, or when optimizing storage.
-license: MIT
-compatibility: Requires the redis MCP server configured in this plugin (uvx redis-mcp-server==0.5.1) and a reachable Redis instance.
-metadata:
-  plugin: redis
-  kind: memory-analysis
----
-
 # Analyze Redis Memory
 
 Use this skill when Redis memory usage matters: high memory, evictions, or

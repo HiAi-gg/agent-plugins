@@ -3,16 +3,6 @@ name: investigate-performance
 description: "Analyze a Sentry trace or performance span to find the slow or failing step in a request: spans, durations, dependencies, and errors. Use when investigating latency, timeouts, or which service a failure originates from."
 ---
 
----
-name: investigate-performance
-description: Analyze a Sentry trace or performance span to find the slow or failing step in a request: spans, durations, dependencies, and errors. Use when investigating latency, timeouts, or which service/query a failure originates from.
-license: MIT
-compatibility: Requires the sentry MCP server (hosted, OAuth via client) with performance/tracing data access.
-metadata:
-  plugin: sentry
-  kind: tracing
----
-
 # Investigate Performance (Sentry Trace)
 
 Use this skill when an agent must find where a request is slow or which span

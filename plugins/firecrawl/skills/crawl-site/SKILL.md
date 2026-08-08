@@ -3,16 +3,6 @@ name: crawl-site
 description: Crawl a website's pages with Firecrawl to inventory content, find broken links, or gather a corpus. Use when the agent needs to understand a site's structure, find all pages under a path, or collect a set of pages for analysis.
 ---
 
----
-name: crawl-site
-description: Crawl a website's pages with Firecrawl to inventory content, find broken links, or gather a corpus. Use when the agent needs to understand a site's structure, find all pages under a path, or collect a set of pages for analysis.
-license: MIT
-compatibility: Requires the firecrawl MCP server configured in this plugin (npx firecrawl-mcp). NOTE: crawl requires an API key (not available on the keyless free tier).
-metadata:
-  plugin: firecrawl
-  kind: site-crawling
----
-
 # Crawl a Site with Firecrawl
 
 Use this skill when an agent must enumerate or collect pages from a website.

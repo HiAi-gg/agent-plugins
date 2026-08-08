@@ -3,16 +3,6 @@ name: explain-kubernetes-resource
 description: Explain what a Kubernetes resource does, how its spec maps to runtime objects, and how workloads relate (Deployments, Services, Ingress, ConfigMaps, Secrets, PVCs). Use when the user asks what a YAML manifest means, what a resource does, or how objects connect.
 ---
 
----
-name: explain-kubernetes-resource
-description: Explain what a Kubernetes resource does, how its spec maps to runtime objects, and how workloads relate (Deployments, Services, Ingress, ConfigMaps, Secrets, PVCs). Use when the user asks what a YAML manifest means, what a resource does, or how objects connect.
-license: MIT
-compatibility: Requires the kubernetes MCP server configured in this plugin (kubernetes-mcp-server@0.0.65, --read-only) or kubectl with access to the cluster; can also work from manifest files alone.
-metadata:
-  plugin: kubernetes
-  kind: understanding
----
-
 # Explain a Kubernetes Resource
 
 Use this skill when the user points at a manifest or resource name and wants to

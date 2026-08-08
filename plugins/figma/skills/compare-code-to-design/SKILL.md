@@ -3,16 +3,6 @@ name: compare-code-to-design
 description: "Compare implemented UI code against its Figma design: fetch the design context and screenshot, inspect the implementation, and report visual/behavioral differences. Use when a feature was built from a design and needs verification, or when design and implementation drift."
 ---
 
----
-name: compare-code-to-design
-description: Compare implemented UI code against its Figma design: fetch the design context and screenshot, inspect the implementation, and report visual/behavioral differences. Use when a feature was built from a design and needs verification, or when design and implementation drift.
-license: MIT
-compatibility: Requires the figma MCP server configured in this plugin (streamable-http https://mcp.figma.com/mcp) with OAuth completed in the client, plus access to the implementation.
-metadata:
-  plugin: figma
-  kind: verification
----
-
 # Compare Code to Design
 
 Use this skill when an agent must verify that an implementation matches its

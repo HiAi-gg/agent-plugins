@@ -1,6 +1,6 @@
 ---
 name: diagnose-query
-description: Diagnose why a PostgreSQL query is slow or suspicious: understand the SQL, inspect tables and indexes, EXPLAIN JSON, and propose measured next steps. Use when a query is slow, timing out, or has a suspicious plan.
+description: "Diagnose why a PostgreSQL query is slow or suspicious: understand the SQL, inspect tables and indexes, EXPLAIN JSON, and propose measured next steps. Use when a query is slow, timing out, or has a suspicious plan."
 license: MIT
 compatibility: Requires the postgresql MCP server bundled with this plugin and a DATABASE_URL at the client level.
 metadata:
@@ -71,3 +71,4 @@ Rank causes by evidence:
 - Read-only: `explain_query` does not execute the statement.
 - Never suggest `VACUUM FULL`, `REINDEX`, or schema changes as automatic
   actions — only as recommendations requiring user action.
+

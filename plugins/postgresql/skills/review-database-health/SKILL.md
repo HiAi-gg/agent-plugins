@@ -1,6 +1,6 @@
 ---
 name: review-database-health
-description: Produce a compact PostgreSQL health review: configuration signals, capacity, maintenance, locks/activity, large relations, and query statistics. Use when asked for an overall database health assessment or a pre-maintenance check.
+description: "Produce a compact PostgreSQL health review: configuration signals, capacity, maintenance, locks/activity, large relations, and query statistics. Use when asked for an overall database health assessment or a pre-maintenance check."
 license: MIT
 compatibility: Requires the postgresql MCP server bundled with this plugin and a DATABASE_URL at the client level.
 metadata:
@@ -79,3 +79,4 @@ checks (e.g. "investigate the idle-in-transaction session via
   system. Say so in the summary.
 - Never recommend mutating actions as automatic steps; only as
   recommendations requiring user intent.
+

@@ -3,16 +3,6 @@ name: explore-repository
 description: "Produce a structured read-only review of a GitHub repository: purpose, structure, health signals, dependencies, and contribution state. Use when onboarding to an unfamiliar repository, evaluating a repo for adoption, or preparing a summary."
 ---
 
----
-name: explore-repository
-description: Produce a structured read-only review of a GitHub repository: purpose, structure, health signals, dependencies, and contribution state. Use when onboarding to an unfamiliar repository, evaluating a repo for adoption, or preparing a summary for another agent or person.
-license: MIT
-compatibility: Requires the github MCP server (GitHub Copilot-hosted, OAuth via client) and read access to the target repository.
-metadata:
-  plugin: github
-  kind: repository-review
----
-
 # Explore a Repository
 
 Use this skill when an agent needs a reliable, structured picture of a GitHub

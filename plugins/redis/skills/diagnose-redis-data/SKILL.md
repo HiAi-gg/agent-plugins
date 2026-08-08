@@ -3,16 +3,6 @@ name: diagnose-redis-data
 description: "Diagnose Redis data problems: missing keys, wrong types, stale or expiring values, and mismatches between writers and readers. Use when an application cannot find a value, reads the wrong one, or Redis behavior is surprising."
 ---
 
----
-name: diagnose-redis-data
-description: Diagnose Redis data problems: missing keys, wrong types, stale or expiring values, and mismatches between writers and readers. Use when an application cannot find a value, reads the wrong one, or Redis behavior is surprising.
-license: MIT
-compatibility: Requires the redis MCP server configured in this plugin (uvx redis-mcp-server==0.5.1) and a reachable Redis instance.
-metadata:
-  plugin: redis
-  kind: troubleshooting
----
-
 # Diagnose Redis Data Problems
 
 Use this skill when Redis data behaves unexpectedly: missing keys, wrong

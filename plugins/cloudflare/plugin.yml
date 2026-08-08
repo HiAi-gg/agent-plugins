@@ -1,5 +1,5 @@
 name: cloudflare
-version: 0.0.1
+version: 0.0.2
 description: "Inspect and debug Cloudflare: Workers, DNS, request handling, and configuration — via Cloudflare's official Code Mode MCP server."
 author:
   name: HiAI

@@ -25,7 +25,7 @@ Every plugin is reproducible from:
 plugins/<name>/plugin.yml  +  plugins/<name>/skills-src/<name>/*.md
 ```
 
-through **Agent Plugins Builder 0.0.8** (public CLI:
+through **Agent Plugins Builder 0.0.9** (public CLI:
 `bunx @hiai-gg/agent-plugins-builder`). Never hand-edit generated structural
 output (plugin.json, mcp.json, skills/*/SKILL.md) without updating the
 declarative source. Regenerate instead:

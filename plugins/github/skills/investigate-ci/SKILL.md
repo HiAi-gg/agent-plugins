@@ -3,16 +3,6 @@ name: investigate-ci
 description: "Investigate GitHub Actions workflow failures: find the failed run, read the failing job step, examine logs, and identify the root cause. Use when a CI run fails, a workflow does not trigger, or a check is stuck or skipped."
 ---
 
----
-name: investigate-ci
-description: Investigate GitHub Actions workflow failures: find the failed run, read the failing job step, examine logs, and identify the root cause. Use when a CI run fails, a workflow does not trigger, or a check is stuck or skipped.
-license: MIT
-compatibility: Requires the github MCP server (GitHub Copilot-hosted, OAuth via client) and access to the target repository.
-metadata:
-  plugin: github
-  kind: ci-debugging
----
-
 # Investigate a GitHub Actions Failure
 
 Use this skill when a GitHub Actions workflow fails, does not trigger, or behaves

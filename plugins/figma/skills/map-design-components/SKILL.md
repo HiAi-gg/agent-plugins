@@ -3,16 +3,6 @@ name: map-design-components
 description: "Map the components in a Figma file to the project's code components: identify reusable components, their properties, and where they are used. Use when building a design system, checking component coverage, or planning which components to extract or reuse."
 ---
 
----
-name: map-design-components
-description: Map the components in a Figma file to the project's code components: identify reusable components, their properties, and where they are used. Use when building a design system, checking component coverage, or planning which components to extract or reuse.
-license: MIT
-compatibility: Requires the figma MCP server configured in this plugin (streamable-http https://mcp.figma.com/mcp) with OAuth completed in the client.
-metadata:
-  plugin: figma
-  kind: component-mapping
----
-
 # Map Figma Components to Code
 
 Use this skill when an agent must connect Figma components to code components —

@@ -1,6 +1,6 @@
 ---
 name: diagnose-locks
-description: Diagnose PostgreSQL lock contention: detect blocked sessions, find the blocking session, identify the lock, and explain the cause. Use when queries hang, transactions stall, or the database appears stuck.
+description: "Diagnose PostgreSQL lock contention: detect blocked sessions, find the blocking session, identify the lock, and explain the cause. Use when queries hang, transactions stall, or the database appears stuck."
 license: MIT
 compatibility: Requires the postgresql MCP server bundled with this plugin and a DATABASE_URL at the client level.
 metadata:
@@ -73,3 +73,4 @@ Common patterns:
 - **Never terminate sessions automatically.** Termination is an
   administrative action; recommend it, never execute it (the plugin has no
   such tool in v0.0.1).
+

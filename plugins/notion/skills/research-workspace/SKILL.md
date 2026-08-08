@@ -3,16 +3,6 @@ name: research-workspace
 description: "Search and read content in a Notion workspace to answer questions: find pages, databases, and connected sources, and extract the relevant information. Use when the user asks what is in their Notion workspace or needs information from Notion."
 ---
 
----
-name: research-workspace
-description: Search and read content in a Notion workspace to answer questions: find pages, databases, and connected sources, and extract the relevant information. Use when the user asks what is in their Notion workspace or needs information from Notion.
-license: MIT
-compatibility: Requires the notion MCP server configured in this plugin (https://mcp.notion.com/mcp) with OAuth completed in the client.
-metadata:
-  plugin: notion
-  kind: research
----
-
 # Research a Notion Workspace
 
 Use this skill when an agent must find and read content in a Notion workspace.

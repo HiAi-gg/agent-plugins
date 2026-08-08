@@ -74,8 +74,11 @@ client.
 
 ## Installation
 
-Copy the plugin directory into your Agent Plugins client's plugin folder, or use
-your client's plugin install flow. No build step is required.
+Copy the plugin's **runtime files** (`plugin.json`, `mcp.json`, `skills/`,
+`README.md`, `LICENSE`) into your Agent Plugins client's plugin folder, or use
+your client's plugin install flow. Do **not** copy the authoring sources
+(`plugin.yml`, `skills-src/`, `docs/`) — see the collection README for the full
+boundary. No build step is required.
 
 ## Configuration
 
@@ -101,6 +104,29 @@ your client's plugin install flow. No build step is required.
 This v0.0.1 is an **inspection/diagnostics** plugin, not a cluster automation
 plugin.
 
+## Why is the server pinned to 0.0.65 and not 0.0.66?
+
+**Pinned to 0.0.65 for stability; 0.0.66 introduces breaking spec changes.**
+
+Upstream `0.0.66` (2026-07-31) ships
+`feat!(mcp): add 2026-07-28 spec support` — an explicitly breaking (`feat!`)
+MCP protocol-revision change. Our read-only guarantee (14 read-annotated
+tools, no mutation tools) was runtime-verified against `0.0.65`; that evidence
+does not automatically carry across a protocol-revision bump.
+
+The security-relevant fixes in `0.0.66` — wellknown-proxy path hardening and
+`TLS_MIN_VERSION`/`TLS_CIPHER_SUITES` support — apply to the server's **HTTP
+transport**. This plugin runs the server over **stdio**, so those code paths
+are not reachable in this configuration. No CVE/GHSA advisory and no OSV entry
+exists against `0.0.65` at the pin review date.
+
+**Review trigger**: upstream backports security fixes only into the latest
+release. If an advisory lands that affects the stdio/read-only surface, the
+pin must be moved to the fixed release and the read-only gate re-verified
+before shipping.
+
+Pin reviewed: **2026-08-08** (upstream latest at review: `0.0.66`).
+
 ## Examples
 
 1. "Why is my pod CrashLoopBackOff?" → `diagnose-pod`.
@@ -112,7 +138,7 @@ plugin.
 
 | Server | Version | License | Source |
 |---|---|---|---|
-| Kubernetes MCP Server | `kubernetes-mcp-server@0.0.65` (pinned) | Apache-2.0 | [containers/kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) |
+| Kubernetes MCP Server | `kubernetes-mcp-server@0.0.65` (pinned; upstream latest `0.0.66` — see pin rationale above) | Apache-2.0 | [containers/kubernetes-mcp-server](https://github.com/containers/kubernetes-mcp-server) |
 
 ## Agent Plugins version
 

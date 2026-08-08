@@ -1,5 +1,5 @@
 name: redis
-version: 0.0.1
+version: 0.0.2
 description: "Inspect and work with Redis: keys, values, TTLs, hashes, lists, sets, streams, memory, and diagnostics via Redis' official MCP server."
 author:
   name: HiAI

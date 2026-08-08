@@ -3,16 +3,6 @@ name: verify-api-usage
 description: Verify that code uses a library's API correctly against current documentation before considering it done. Use after writing code against a library, when a review raises API-usage doubts, or when a build/type error suggests the API changed.
 ---
 
----
-name: verify-api-usage
-description: Verify that code uses a library's API correctly against current documentation before considering it done. Use after writing code against a library, when a review raises API-usage doubts, or when a build/type error suggests the API changed.
-license: MIT
-compatibility: Requires the context7 MCP server configured in this plugin (npx @upstash/context7-mcp@3.2.5) and network access.
-metadata:
-  plugin: context7
-  kind: verification
----
-
 # Verify API Usage
 
 Use this skill when an agent must confirm that existing or newly written code

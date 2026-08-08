@@ -3,16 +3,6 @@ name: review-cluster
 description: "Perform a read-only health review of a Kubernetes cluster or namespace: node status, workload state, resource pressure, events, and obvious misconfigurations. Use when asked for an overall cluster or namespace health assessment."
 ---
 
----
-name: review-cluster
-description: Perform a read-only health review of a Kubernetes cluster or namespace: node status, workload state, resource pressure, events, and obvious misconfigurations. Use when asked for an overall cluster or namespace health assessment.
-license: MIT
-compatibility: Requires the kubernetes MCP server configured in this plugin (kubernetes-mcp-server@0.0.65, --read-only) or kubectl with read access to the target cluster/namespace.
-metadata:
-  plugin: kubernetes
-  kind: review
----
-
 # Review Kubernetes Cluster Health
 
 Use this skill to produce a read-only health assessment of a cluster (or a

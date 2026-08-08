@@ -1,5 +1,5 @@
 name: github
-version: 0.0.1
+version: 0.0.2
 description: "Inspect and work with GitHub: pull requests, issues, CI, and repositories via GitHub's official MCP server, with focused workflow skills."
 author:
   name: HiAI

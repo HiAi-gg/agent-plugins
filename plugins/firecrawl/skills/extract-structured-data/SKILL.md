@@ -3,16 +3,6 @@ name: extract-structured-data
 description: Extract structured data from web pages or a set of pages with Firecrawl. Use when the agent needs fields, tables, or structured records from web content (pricing, listings, specs) rather than free text.
 ---
 
----
-name: extract-structured-data
-description: Extract structured data from web pages or a set of pages with Firecrawl. Use when the agent needs fields, tables, or structured records from web content (pricing, listings, specs) rather than free text.
-license: MIT
-compatibility: Requires the firecrawl MCP server configured in this plugin (npx firecrawl-mcp). NOTE: extract requires an API key (not available on the keyless free tier).
-metadata:
-  plugin: firecrawl
-  kind: structured-extraction
----
-
 # Extract Structured Data with Firecrawl
 
 Use this skill when an agent must pull structured fields from web content.

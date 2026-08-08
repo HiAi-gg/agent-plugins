@@ -9,15 +9,16 @@
 ## PostgreSQL versions
 
 Full matrix runtime-tested in this release (docker images; each ran the
-13-tool suite and the 19-case security gate):
+13-tool suite and the security gate — 19 cases at release, extended to 30
+cases with the F-1/F-2/F-3 regression coverage in the 0.0.2 fix):
 
-| PostgreSQL | Status | Runtime | Security | Notes |
-|---|---|---|---|---|
-| 14 (alpine) | TESTED | 13/13 tools | 19/19 gate | older supported major |
-| 15 (alpine) | TESTED | 13/13 tools | 19/19 gate | |
-| 16 (alpine) | TESTED | 13/13 tools | 19/19 gate | current stable major |
-| 17 (alpine) | TESTED | 13/13 tools | 19/19 gate | |
-| 18 (alpine) | TESTED | 13/13 tools | 19/19 gate | current stable major; full first-class support (see below) |
+| PostgreSQL        | Status      | Runtime     | Security   | Notes                                                      |
+| ----------------- | ----------- | ----------- | ---------- | ---------------------------------------------------------- |
+| 14 (alpine)       | TESTED      | 13/13 tools | 19/19 gate | older supported major                                      |
+| 15 (alpine)       | TESTED      | 13/13 tools | 19/19 gate |                                                            |
+| 16 (alpine)       | TESTED      | 13/13 tools | 19/19 gate | current stable major                                       |
+| 17 (alpine)       | TESTED      | 13/13 tools | 19/19 gate |                                                            |
+| 18 (alpine)       | TESTED      | 13/13 tools | 19/19 gate | current stable major; full first-class support (see below) |
 | 19 beta2 (alpine) | BETA TESTED | 13/13 tools | 19/19 gate | pre-release compatibility target; NOT production-supported |
 
 **PG14–PG18** are supported/tested stable lines. **PG19** is a pre-release
@@ -25,6 +26,11 @@ compatibility target: it is not production-supported until PG19 reaches GA
 and the final compatibility suite is rerun against the GA release (see
 `docs/RELEASES.md` in the collection root). The plugin does not claim blanket
 "PostgreSQL 14–19" support while 19 is pre-release.
+
+> The extended 30-case security gate (adds `set_config`, the server-file /
+> admin function surface, and the F-1 identifier regressions) was re-verified
+> in full on PostgreSQL 16 during the 0.0.2 security fix; the other matrix
+> rows were verified against the 19-case gate.
 
 ### PostgreSQL 18 extended verification
 
@@ -60,7 +66,8 @@ uses a capability layer, not per-major forks.
 
 - `bun` (runtime for the bundled MCP).
 - PostgreSQL server reachable from the MCP host.
-- `DATABASE_URL` (or default `postgresql://localhost:5432/postgres`).
+- `DATABASE_URL` at the client level (required; there is no default host —
+  the server refuses to start when it is unset).
 
 ## Client compatibility
 

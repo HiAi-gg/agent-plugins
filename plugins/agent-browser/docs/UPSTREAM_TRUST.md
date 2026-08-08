@@ -5,10 +5,10 @@
 | Upstream project | agent-browser |
 | Upstream owner | vercel-labs |
 | Repository | https://github.com/vercel-labs/agent-browser |
-| License | MIT |
+| License | Apache-2.0 |
 | Trust level | **TRUST B — Established Community** |
 | Selected version | `0.31.1` (runtime-verified in this release) |
-| Why trusted | Established project (vercel-labs org), meaningful adoption as an agent-native browser CLI, active maintenance, releases, multiple contributors, clear MIT license, CI, runtime-verified by us in this release |
+| Why trusted | Established project (vercel-labs org), meaningful adoption as an agent-native browser CLI, active maintenance, releases, multiple contributors, clear Apache-2.0 license, CI, runtime-verified by us in this release |
 | Maintenance evidence | Versioned releases (0.31.x); active repo; bundled skill system |
 | Authentication model | None required for public pages; user sessions for authenticated apps; no credentials in the plugin |
 | Write capabilities | The CLI can click/fill/submit; skills default to read-first and gate side-effect flows |

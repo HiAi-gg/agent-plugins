@@ -3,16 +3,6 @@ name: browse-web
 description: "Browse and interact with web pages using the agent-browser CLI: open pages, read accessible snapshots, click by ref, fill forms, navigate, and read state. Use when the agent needs to inspect or operate a real web page or web application."
 ---
 
----
-name: browse-web
-description: Browse and interact with web pages using the agent-browser CLI: open pages, read accessible snapshots, click by ref, fill forms, navigate, and read state. Use when the agent needs to inspect or operate a real web page or web application.
-license: MIT
-compatibility: Requires the agent-browser CLI (v0.31.x) with a Chrome for Testing browser installed (agent-browser install). See plugin README for setup.
-metadata:
-  plugin: agent-browser
-  kind: web-interaction
----
-
 # Browse and Interact with Web Pages
 
 Use this skill when an agent must open, read, or operate a real web page with

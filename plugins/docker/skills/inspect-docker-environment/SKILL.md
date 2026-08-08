@@ -3,16 +3,6 @@ name: inspect-docker-environment
 description: "Produce a read-only inventory of a local Docker environment: running and stopped containers, images, networks, volumes, and disk usage. Use when getting oriented in an unfamiliar Docker setup or before proposing container changes."
 ---
 
----
-name: inspect-docker-environment
-description: Produce a read-only inventory of a local Docker environment: running and stopped containers, images, networks, volumes, and disk usage. Use when getting oriented in an unfamiliar Docker setup or before proposing container changes.
-license: MIT
-compatibility: Requires the docker CLI and a running Docker daemon.
-metadata:
-  plugin: docker
-  kind: orientation
----
-
 # Inspect a Docker Environment
 
 Use this skill to get a reliable, read-only picture of what Docker is running on

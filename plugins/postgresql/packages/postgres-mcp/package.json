@@ -1,6 +1,6 @@
 {
   "name": "@hiai/postgres-mcp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "HiAI read-only PostgreSQL inspection MCP server (bundled with agent-plugin-postgresql)",
   "type": "module",
   "license": "MIT",

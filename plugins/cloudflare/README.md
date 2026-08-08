@@ -67,9 +67,12 @@ user.
 
 ## Installation
 
-Copy the plugin directory into your Agent Plugins client's plugin folder, or use
-your client's plugin install flow. No build step is required. Complete OAuth in
-your client on first connect (or configure an API token at the client level).
+Copy the plugin's **runtime files** (`plugin.json`, `mcp.json`, `skills/`,
+`README.md`, `LICENSE`) into your Agent Plugins client's plugin folder, or use
+your client's plugin install flow. Do **not** copy the authoring sources
+(`plugin.yml`, `skills-src/`, `docs/`) — see the collection README for the full
+boundary. No build step is required. Complete OAuth in your client on first
+connect (or configure an API token at the client level).
 
 ## Configuration
 

@@ -3,16 +3,6 @@ name: review-dockerfile
 description: "Review a Dockerfile for correctness, best practices, and security: base image, layers, caching, secrets, and image size. Use when writing, auditing, or optimizing a Dockerfile."
 ---
 
----
-name: review-dockerfile
-description: Review a Dockerfile for correctness, best practices, and security: base image, layers, caching, secrets, and image size. Use when writing, auditing, or optimizing a Dockerfile.
-license: MIT
-compatibility: Requires the docker CLI (for docker build validation) or just the Dockerfile text.
-metadata:
-  plugin: docker
-  kind: dockerfile-review
----
-
 # Review a Dockerfile
 
 Use this skill when an agent must audit or improve a Dockerfile.

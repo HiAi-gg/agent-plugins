@@ -3,16 +3,6 @@ name: diagnose-container
 description: Diagnose why a Docker container is failing, unhealthy, crash-looping, or not starting. Use when a container exits with an error, is restarting, reports unhealthy, or a service is unreachable.
 ---
 
----
-name: diagnose-container
-description: Diagnose why a Docker container is failing, unhealthy, crash-looping, or not starting. Use when a container exits with an error, is restarting, reports unhealthy, or a service is unreachable.
-license: MIT
-compatibility: Requires the docker CLI and a running Docker daemon.
-metadata:
-  plugin: docker
-  kind: troubleshooting
----
-
 # Diagnose a Docker Failure
 
 Use this skill when a container will not start, is restarting in a loop, is

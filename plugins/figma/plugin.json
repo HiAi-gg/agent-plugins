@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "figma",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bring Figma design context into agent workflows: inspect design context, implement from design, map components, and compare code to design — via Figma's official MCP server.",
   "author": {
     "name": "HiAI",

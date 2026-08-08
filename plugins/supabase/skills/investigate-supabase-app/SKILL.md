@@ -3,16 +3,6 @@ name: investigate-supabase-app
 description: "Investigate a Supabase-backed app end to end: schema, data access, RLS, and auth working together. Use when a feature is broken, data is missing, or the app behaves unexpectedly and the cause may be in the Supabase backend."
 ---
 
----
-name: investigate-supabase-app
-description: Investigate a Supabase-backed app end to end: schema, data access, RLS, and auth working together. Use when a feature is broken, data is missing, or the app behaves unexpectedly and the cause may be in the Supabase backend.
-license: MIT
-compatibility: Requires the supabase MCP server configured in this plugin (npx @supabase/mcp-server-postgrest) with a project --apiUrl (client-configured).
-metadata:
-  plugin: supabase
-  kind: investigation
----
-
 # Investigate a Supabase-Backed App
 
 Use this skill when an agent must root-cause a problem that may live in the

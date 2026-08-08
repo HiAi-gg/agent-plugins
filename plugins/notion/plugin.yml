@@ -1,5 +1,5 @@
 name: notion
-version: 0.0.1
+version: 0.0.2
 description: "Research and summarize a Notion workspace: find pages, gather context, and prepare project updates — via Notion's official hosted MCP server."
 author:
   name: HiAI

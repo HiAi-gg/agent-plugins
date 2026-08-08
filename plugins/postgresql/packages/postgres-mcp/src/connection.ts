@@ -28,10 +28,15 @@
  *   - `db.begin()` / `db.transaction()` for transactions.
  */
 export type SqlDatabase = {
-  unsafe(sql: string, params?: unknown[]): {
+  unsafe(
+    sql: string,
+    params?: unknown[],
+  ): {
     execute(...paramsOrArray: unknown[]): Promise<Record<string, unknown>[]>;
     values(...paramsOrArray: unknown[]): Promise<unknown[][]>;
-    run(...paramsOrArray: unknown[]): Promise<{ changes: number; lastInsertRowid: unknown }>;
+    run(
+      ...paramsOrArray: unknown[]
+    ): Promise<{ changes: number; lastInsertRowid: unknown }>;
   };
   close(): void;
 };
@@ -55,8 +60,19 @@ export interface PgConfig {
   appName: string;
 }
 
+/** Resolve the required DATABASE_URL, failing fast when it is unset. */
+export function requireDatabaseUrl(): string {
+  const url = process.env.DATABASE_URL;
+  if (!url || url.trim() === "") {
+    throw new Error(
+      "DATABASE_URL environment variable is required. Set it to your PostgreSQL connection string.",
+    );
+  }
+  return url;
+}
+
 export const DEFAULT_CONFIG: PgConfig = {
-  url: process.env.DATABASE_URL ?? "postgresql://localhost:5432/postgres",
+  url: requireDatabaseUrl(),
   statementTimeoutMs: 10_000,
   lockTimeoutMs: 5_000,
   idleInTransactionTimeoutMs: 60_000,
@@ -83,7 +99,9 @@ export function redactUrl(url: string): string {
 export function scrubSecrets(text: string): string {
   return text
     .replace(/password=([^\s]+)/gi, "password=***")
-    .replace(/postgres(ql)?:\/\/[^@\s]+@/gi, (m) => m.replace(/[^@\s]+@/, "***@"));
+    .replace(/postgres(ql)?:\/\/[^@\s]+@/gi, (m) =>
+      m.replace(/[^@\s]+@/, "***@"),
+    );
 }
 
 let db: SqlDatabase | null = null;
@@ -109,9 +127,15 @@ export function buildSafeUrl(rawUrl: string, config: PgConfig): string {
 
 export function getDb(config: PgConfig = DEFAULT_CONFIG): SqlDatabase {
   if (db) return db;
+  if (!config.url || config.url.trim() === "") {
+    throw new Error(
+      "DATABASE_URL environment variable is required. Set it to your PostgreSQL connection string.",
+    );
+  }
   // Bun.SQL is available at runtime; cast through unknown to keep the MCP
   // decoupled from Bun's exact type export shape.
-  const Database = (Bun as unknown as { SQL: new (url: string) => SqlDatabase }).SQL;
+  const Database = (Bun as unknown as { SQL: new (url: string) => SqlDatabase })
+    .SQL;
   db = new Database(buildSafeUrl(config.url, config));
   return db;
 }
@@ -123,28 +147,33 @@ export function getDb(config: PgConfig = DEFAULT_CONFIG): SqlDatabase {
  * set_config calls reinforce the current connection.
  */
 export function applySessionSafety(db: SqlDatabase, config: PgConfig): void {
-  db.unsafe(
-    `SELECT set_config('application_name', $1, false)`,
-    [config.appName],
-  ).execute().catch(() => {});
-  db.unsafe(
-    `SELECT set_config('default_transaction_read_only', 'on', false)`,
-  ).execute().catch(() => {});
-  db.unsafe(
-    `SELECT set_config('transaction_read_only', 'on', true)`,
-  ).execute().catch(() => {});
-  db.unsafe(
-    `SELECT set_config('statement_timeout', $1, false)`,
-    [String(config.statementTimeoutMs)],
-  ).execute().catch(() => {});
-  db.unsafe(
-    `SELECT set_config('lock_timeout', $1, false)`,
-    [String(config.lockTimeoutMs)],
-  ).execute().catch(() => {});
+  db.unsafe(`SELECT set_config('application_name', $1, false)`, [
+    config.appName,
+  ])
+    .execute()
+    .catch(() => {});
+  db.unsafe(`SELECT set_config('default_transaction_read_only', 'on', false)`)
+    .execute()
+    .catch(() => {});
+  db.unsafe(`SELECT set_config('transaction_read_only', 'on', true)`)
+    .execute()
+    .catch(() => {});
+  db.unsafe(`SELECT set_config('statement_timeout', $1, false)`, [
+    String(config.statementTimeoutMs),
+  ])
+    .execute()
+    .catch(() => {});
+  db.unsafe(`SELECT set_config('lock_timeout', $1, false)`, [
+    String(config.lockTimeoutMs),
+  ])
+    .execute()
+    .catch(() => {});
   db.unsafe(
     `SELECT set_config('idle_in_transaction_session_timeout', $1, false)`,
     [String(config.idleInTransactionTimeoutMs)],
-  ).execute().catch(() => {});
+  )
+    .execute()
+    .catch(() => {});
 }
 
 /** Reset the singleton (used by tests). */
@@ -153,7 +182,11 @@ export function resetDb(): void {
 }
 
 /** Execute a statement and return the first row (or undefined). */
-export async function firstRow(db: SqlDatabase, sql: string, params?: unknown[]): Promise<Record<string, unknown> | undefined> {
+export async function firstRow(
+  db: SqlDatabase,
+  sql: string,
+  params?: unknown[],
+): Promise<Record<string, unknown> | undefined> {
   const rows = await db.unsafe(sql, params).execute();
   return rows[0];
 }

@@ -1,5 +1,5 @@
 name: supabase
-version: 0.0.1
+version: 0.0.2
 description: "Investigate Supabase-backed apps: schema, data access, RLS, and auth via Supabase's official PostgREST MCP server."
 author:
   name: HiAI

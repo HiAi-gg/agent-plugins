@@ -3,16 +3,6 @@ name: inspect-redis
 description: "Inspect Redis keys and values: scan keys by pattern, read values of any type, check TTLs and types, and summarize what is stored. Use when asked what is in Redis, whether a key exists, or why a value looks wrong."
 ---
 
----
-name: inspect-redis
-description: Inspect Redis keys and values: scan keys by pattern, read values of any type, check TTLs and types, and summarize what is stored. Use when asked what is in Redis, whether a key exists, or why a value looks wrong.
-license: MIT
-compatibility: Requires the redis MCP server configured in this plugin (uvx redis-mcp-server==0.5.1) and a reachable Redis instance.
-metadata:
-  plugin: redis
-  kind: data-inspection
----
-
 # Inspect Redis Data
 
 Use this skill when an agent needs to look at what is stored in Redis.

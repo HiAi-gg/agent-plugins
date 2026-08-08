@@ -1,5 +1,5 @@
 name: postgresql
-version: 0.0.1
+version: 0.0.2
 description: "Safe, read-only PostgreSQL inspection, query diagnosis, performance analysis, and database health workflows for AI agents, with a bundled HiAI PostgreSQL MCP server."
 author:
   name: HiAI
@@ -18,18 +18,43 @@ readme: true
 skills:
   - name: inspect-database
     description: "Understand an unfamiliar PostgreSQL database: identity, schemas, important tables, relationships, indexes, and sizes. Use when onboarding to a database, mapping its structure, or before writing queries against it."
+    license: MIT
+    compatibility: "Requires the postgresql MCP server bundled with this plugin (bun run ${PLUGIN_ROOT}/packages/postgres-mcp) and a DATABASE_URL at the client level."
+    metadata:
+      plugin: postgresql
+      kind: database-mapping
     body-file: skills-src/postgresql/inspect-database.md
   - name: diagnose-query
     description: "Diagnose why a PostgreSQL query is slow or suspicious: understand the SQL, inspect tables and indexes, EXPLAIN JSON, and propose measured next steps. Use when a query is slow, timing out, or has a suspicious plan."
+    license: MIT
+    compatibility: "Requires the postgresql MCP server bundled with this plugin and a DATABASE_URL at the client level."
+    metadata:
+      plugin: postgresql
+      kind: query-diagnosis
     body-file: skills-src/postgresql/diagnose-query.md
   - name: diagnose-performance
     description: "Diagnose PostgreSQL performance issues: active sessions, long transactions, locks, table health, sizes, and pg_stat_statements. Use when the database is slow, under load, or when asked for a performance investigation."
+    license: MIT
+    compatibility: "Requires the postgresql MCP server bundled with this plugin and a DATABASE_URL at the client level."
+    metadata:
+      plugin: postgresql
+      kind: performance-diagnosis
     body-file: skills-src/postgresql/diagnose-performance.md
   - name: diagnose-locks
     description: "Diagnose PostgreSQL lock contention: detect blocked sessions, find the blocking session, identify the lock, and explain the cause. Use when queries hang, transactions stall, or the database appears stuck."
+    license: MIT
+    compatibility: "Requires the postgresql MCP server bundled with this plugin and a DATABASE_URL at the client level."
+    metadata:
+      plugin: postgresql
+      kind: lock-diagnosis
     body-file: skills-src/postgresql/diagnose-locks.md
   - name: review-database-health
     description: "Produce a compact PostgreSQL health review: configuration signals, capacity, maintenance, locks/activity, large relations, and query statistics. Use when asked for an overall database health assessment or a pre-maintenance check."
+    license: MIT
+    compatibility: "Requires the postgresql MCP server bundled with this plugin and a DATABASE_URL at the client level."
+    metadata:
+      plugin: postgresql
+      kind: health-review
     body-file: skills-src/postgresql/review-database-health.md
 mcp:
   postgresql:

@@ -3,16 +3,6 @@ name: inspect-schema
 description: "Inspect a Supabase/PostgREST schema through the official Supabase MCP: list tables, view columns and types, and understand the data model. Use when asked about the structure of a Supabase project's database."
 ---
 
----
-name: inspect-schema
-description: Inspect a Supabase/PostgREST schema through the official Supabase MCP: list tables, view columns and types, and understand the data model. Use when asked about the structure of a Supabase project's database.
-license: MIT
-compatibility: Requires the supabase MCP server configured in this plugin (npx @supabase/mcp-server-postgrest) with a project --apiUrl (client-configured).
-metadata:
-  plugin: supabase
-  kind: schema-inspection
----
-
 # Inspect a Supabase Schema
 
 Use this skill when an agent needs to understand the structure of a Supabase

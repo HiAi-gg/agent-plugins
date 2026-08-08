@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| Builder version | `@hiai-gg/agent-plugins-builder` **0.0.8** (published npm package; `bunx @hiai-gg/agent-plugins-builder --version` → 0.0.8) |
+| Builder version | `@hiai-gg/agent-plugins-builder` **0.0.9** (published npm package; `bunx @hiai-gg/agent-plugins-builder --version` → 0.0.9) |
 | Builder command | `bunx @hiai-gg/agent-plugins-builder create --config plugin.yml --output <dir>` |
 | Config file | `plugin.yml` (declarative source of truth) |
 | Skill source files | `skills-src/postgresql/*.md` (bodies via `body-file`) |

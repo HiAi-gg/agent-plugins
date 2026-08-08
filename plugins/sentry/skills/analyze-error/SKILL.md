@@ -3,16 +3,6 @@ name: analyze-error
 description: "Debug a production error end to end from a Sentry issue: read the events, stack and context, breadcrumbs, and values, then produce a diagnosis with a proposed next action. Use when asked to root-cause a production exception."
 ---
 
----
-name: analyze-error
-description: Debug a production error end to end from a Sentry issue: read the events, the stack and context, the breadcrumbs, and the values involved, then produce a diagnosis with a proposed next action. Use when asked to root-cause a production exception.
-license: MIT
-compatibility: Requires the sentry MCP server (hosted, OAuth via client) with access to event data (stack traces, breadcrumbs, tags, contexts).
-metadata:
-  plugin: sentry
-  kind: debugging
----
-
 # Analyze a Production Error
 
 Use this skill when an agent must root-cause a production error from its Sentry

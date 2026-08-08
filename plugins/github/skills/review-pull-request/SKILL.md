@@ -3,16 +3,6 @@ name: review-pull-request
 description: "Review a GitHub pull request systematically: read the diff, changed files, review comments, CI status, and related issues, then produce a structured review. Use when asked to review a PR, assess merge readiness, or understand what a PR changes."
 ---
 
----
-name: review-pull-request
-description: Review a GitHub pull request systematically: read the diff, changed files, review comments, CI status, and related issues, then produce a structured review. Use when asked to review a PR, assess merge readiness, or understand what a PR changes.
-license: MIT
-compatibility: Requires the github MCP server (GitHub Copilot-hosted, OAuth via client) and access to the target repository.
-metadata:
-  plugin: github
-  kind: code-review
----
-
 # Review a Pull Request
 
 Use this skill when an agent is asked to review a pull request or assess whether

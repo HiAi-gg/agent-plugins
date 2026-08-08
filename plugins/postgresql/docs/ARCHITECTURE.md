@@ -25,10 +25,9 @@ agent-plugin-postgresql
 │       ├── src/
 │       │   ├── index.ts       # server + 13 tools
 │       │   ├── connection.ts  # Bun.SQL pool, read-only conninfo, redaction
-│       │   └── query-safety.ts# single-statement + keyword checks
-│       └── tests/             # unit + security gate
+│       │   └── query-safety.ts# single-statement + keyword/function checks
+│       └── tests/             # unit tests, security gate, matrix suite
 │
-├── tests/
 ├── docs/
 ├── README.md
 ├── CHANGELOG.md

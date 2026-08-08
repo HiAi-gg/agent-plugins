@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "agent-browser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Browse, test, and debug web pages with the agent-browser CLI: agent-native browser automation with focused workflow skills.",
   "author": {
     "name": "HiAI",

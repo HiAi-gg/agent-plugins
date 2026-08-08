@@ -21,7 +21,7 @@ No MCP. The CLI is the tool; the skills are the behavioral layer.
 
 ## Upstream
 
-- vercel-labs/agent-browser (MIT). See docs/UPSTREAM_TRUST.md.
+- vercel-labs/agent-browser (Apache-2.0). See docs/UPSTREAM_TRUST.md.
 
 ## Alternatives rejected
 

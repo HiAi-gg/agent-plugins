@@ -3,16 +3,6 @@ name: research-library-docs
 description: Look up current, authoritative documentation for a library or framework before implementing with it. Use when about to use an unfamiliar library, a fast-changing API, or when configuration behavior is uncertain.
 ---
 
----
-name: research-library-docs
-description: Look up current, authoritative documentation for a library or framework before implementing with it. Use when about to use an unfamiliar library, a fast-changing API, or when configuration behavior is uncertain.
-license: MIT
-compatibility: Requires the context7 MCP server configured in this plugin (npx @upstash/context7-mcp@3.2.5) and network access.
-metadata:
-  plugin: context7
-  kind: research
----
-
 # Research Library Documentation
 
 Use this skill when an agent is about to implement with a library, framework, or

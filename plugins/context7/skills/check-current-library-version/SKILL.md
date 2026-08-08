@@ -3,16 +3,6 @@ name: check-current-library-version
 description: Check the current stable version of a library or framework and what changed recently, before recommending upgrades or writing version-sensitive code. Use when a version bump is proposed, when troubleshooting a version-specific bug, or when the project's pinned version looks old.
 ---
 
----
-name: check-current-library-version
-description: Check the current stable version of a library or framework and what changed recently, before recommending upgrades or writing version-sensitive code. Use when a version bump is proposed, when troubleshooting a version-specific bug, or when the project's pinned version looks old.
-license: MIT
-compatibility: Requires the context7 MCP server configured in this plugin (npx @upstash/context7-mcp@3.2.5) and network access.
-metadata:
-  plugin: context7
-  kind: version-check
----
-
 # Check Current Library Version
 
 Use this skill when the current version of a library matters: upgrade

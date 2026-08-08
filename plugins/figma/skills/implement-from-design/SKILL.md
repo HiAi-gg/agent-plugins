@@ -3,16 +3,6 @@ name: implement-from-design
 description: "Implement a UI from a Figma design: fetch design context, map to the project's framework and design system, and verify against the design. Use when the user provides a Figma link and asks for the implementation."
 ---
 
----
-name: implement-from-design
-description: Implement a UI from a Figma design: fetch design context, map to the project's framework and design system, and verify against the design. Use when the user provides a Figma link and asks for the implementation.
-license: MIT
-compatibility: Requires the figma MCP server configured in this plugin (streamable-http https://mcp.figma.com/mcp) with OAuth completed in the client, plus the project's framework/design system.
-metadata:
-  plugin: figma
-  kind: implementation
----
-
 # Implement a UI from a Figma Design
 
 Use this skill when an agent must turn a Figma design into code in the user's

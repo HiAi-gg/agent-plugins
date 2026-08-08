@@ -3,16 +3,6 @@ name: debug-web-ui
 description: "Debug a web UI problem in a real browser with agent-browser: reproduce, read the page state, isolate the failing element or interaction, and report the root cause. Use when a page looks wrong, an interaction misbehaves, or a UI bug needs root-causing."
 ---
 
----
-name: debug-web-ui
-description: Debug a web UI problem in a real browser with agent-browser: reproduce, read the page state, isolate the failing element or interaction, and report the root cause. Use when a page looks wrong, an interaction misbehaves, or a UI bug needs root-causing.
-license: MIT
-compatibility: Requires the agent-browser CLI (v0.31.x) with Chrome for Testing installed.
-metadata:
-  plugin: agent-browser
-  kind: ui-debugging
----
-
 # Debug a Web UI
 
 Use this skill when an agent must find the root cause of a web UI problem using

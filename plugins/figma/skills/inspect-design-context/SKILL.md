@@ -3,16 +3,6 @@ name: inspect-design-context
 description: "Extract design context from a Figma file through the official Figma MCP: design tokens, variables, components, and layout structure for a selected frame or node. Use when implementing a design, checking design tokens, or understanding a Figma screen's structure."
 ---
 
----
-name: inspect-design-context
-description: Extract design context from a Figma file through the official Figma MCP: design tokens, variables, components, and layout structure for a selected frame or node. Use when implementing a design, checking design tokens, or understanding a Figma screen's structure.
-license: MIT
-compatibility: Requires the figma MCP server configured in this plugin (streamable-http https://mcp.figma.com/mcp) with OAuth completed in the client.
-metadata:
-  plugin: figma
-  kind: design-context
----
-
 # Inspect Design Context from Figma
 
 Use this skill when an agent needs structured design context from a Figma

@@ -3,16 +3,6 @@ name: find-related-pages
 description: "Find pages in a Notion workspace related to a topic or page: by search, links, tags, or database relations. Use when the user needs a set of related documents, cross-references, or context around a project."
 ---
 
----
-name: find-related-pages
-description: Find pages in a Notion workspace related to a topic or page: by search, links, tags, or database relations. Use when the user needs a set of related documents, cross-references, or context around a project.
-license: MIT
-compatibility: Requires the notion MCP server configured in this plugin (https://mcp.notion.com/mcp) with OAuth completed in the client.
-metadata:
-  plugin: notion
-  kind: discovery
----
-
 # Find Related Pages in Notion
 
 Use this skill when an agent must discover pages related to a topic or an

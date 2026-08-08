@@ -1,7 +1,7 @@
 # Collection Release Report — HiAi-gg/agent-plugins
 
 Date: 2026-08-08.
-Builder: `@hiai-gg/agent-plugins-builder` **0.0.8** (public npm package).
+Builder: `@hiai-gg/agent-plugins-builder` **0.0.9** (public npm package).
 Agent Plugins specification: **1.0.0** (Working Draft).
 
 ## 1. Final repository tree
@@ -53,7 +53,7 @@ under `plugins/`. No archived plugin appears in the active table.
 
 ## 3. Builder version used
 
-`@hiai-gg/agent-plugins-builder` **0.0.8** — verified via
+`@hiai-gg/agent-plugins-builder` **0.0.9** — verified via
 `bunx @hiai-gg/agent-plugins-builder --version`. All plugins carry
 `docs/BUILDER_PROVENANCE.md` recording the version and config.
 
@@ -160,7 +160,7 @@ and cannot be exercised in CI. supabase requires a per-project URL
 ## 12. Final verdict
 
 **GO** — the collection is ready to publish as `HiAi-gg/agent-plugins`.
-13 product plugins, reproducible through Builder 0.0.8, validated against the
+13 product plugins, reproducible through Builder 0.0.9, validated against the
 official 1.0.0 schemas, PostgreSQL 14–18 fully tested plus 19 beta
 compatibility-tested, no secrets, no debris, no misleading compatibility
 claims.

@@ -3,7 +3,7 @@
 A curated collection of portable [Agent Plugins](https://agent-plugins.org/) with trusted MCP and CLI integrations, focused Agent Skills, safe defaults, and reproducible builds.
 
 [![Agent Plugins](https://img.shields.io/badge/Agent%20Plugins-1.0.0-blue)](https://agent-plugins.org/)
-[![Builder](https://img.shields.io/badge/Builder-0.0.8-purple)](https://github.com/HiAi-gg/agent-plugins-builder)
+[![Builder](https://img.shields.io/badge/Builder-0.0.9-purple)](https://github.com/HiAi-gg/agent-plugins-builder)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![Plugins](https://img.shields.io/badge/Plugins-13-green)](#plugins)
 
@@ -29,18 +29,76 @@ A curated collection of portable [Agent Plugins](https://agent-plugins.org/) wit
 
 Agent Plugins is a portable, vendor-neutral standard for packaging Agent Skills and MCP servers so they work across compatible clients. This repository publishes HiAI's plugins in that format — one structure, reproducible from declarative sources.
 
-## Quick Start
+## For Users: Installing Plugins
 
-Pick a plugin, copy its directory into your Agent Plugins client's plugin folder, and follow the plugin's README for authentication/configuration. For example:
+Each plugin directory contains both **runtime files** (what your Agent Plugins
+client loads) and **authoring sources** (used only to regenerate the plugin).
+Install the runtime files only.
+
+**Copy** (runtime):
+
+```
+plugin.json
+mcp.json                  (where present — every plugin except docker and agent-browser)
+skills/*/SKILL.md         (every skill directory)
+README.md
+LICENSE
+```
+
+**postgresql** additionally requires its bundled MCP server (referenced by
+`mcp.json`):
+
+```
+packages/postgres-mcp/    (postgresql only — the bundled HiAI PostgreSQL MCP)
+```
+
+**Do NOT copy** (authoring sources / development files):
+
+```
+plugin.yml                (declarative authoring source)
+skills-src/               (markdown skill sources)
+docs/                     (development documentation)
+```
+
+For example, installing the PostgreSQL plugin:
 
 ```bash
-# PostgreSQL (read-only database inspection)
-# 1. copy plugins/postgresql into your client's plugin folder
+# 1. copy the runtime files from plugins/postgresql into your client's plugin folder:
+#    plugin.json, mcp.json, skills/, packages/postgres-mcp/, README.md, LICENSE
 # 2. set DATABASE_URL for the MCP subprocess
 export DATABASE_URL=postgresql://user:pass@localhost:5432/db
 ```
 
-Most MCP-based plugins need no install step — the client launches the server from `mcp.json`.
+Most MCP-based plugins need no install step — the client launches the server
+from `mcp.json`. If your client validates with Agent Plugins Doctor, note that
+`plugin.yml` and `skills-src/` produce an informational `DOC-5003` ("extra
+files at plugin root"); they are intentionally kept in this repository as the
+reproducible authoring source (see below) and should not be copied into an
+installed plugin.
+
+## For Developers: Modifying Plugins
+
+The canonical source for every plugin is:
+
+```
+plugins/<name>/plugin.yml
+plugins/<name>/skills-src/<name>/*.md
+```
+
+Edit **those** files (plus per-plugin content such as `README.md`, `LICENSE`,
+`docs/`, and postgresql's `packages/postgres-mcp`), then regenerate the
+structural output with Agent Plugins Builder:
+
+```bash
+bunx @hiai-gg/agent-plugins-builder create \
+  --config plugins/<name>/plugin.yml \
+  --output /tmp/plugin-regen
+```
+
+Never hand-edit generated structural files (`plugin.json`, `mcp.json`,
+`skills/*/SKILL.md`) — they must remain reproducible from `plugin.yml`. See
+[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for the regenerate → validate →
+compare workflow and [CONTRIBUTING.md](CONTRIBUTING.md) for contribution rules.
 
 ## Categories
 
@@ -79,7 +137,7 @@ PostgreSQL 14–18 tested; PostgreSQL 19 beta compatibility tested. See [docs/PO
 
 ## Build & Validate
 
-All 13 plugins are generated from declarative `plugin.yml` sources through [Agent Plugins Builder 0.0.8](https://github.com/HiAi-gg/agent-plugins-builder) and must remain reproducible from them. See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for the regenerate → validate → compare workflow.
+All 13 plugins are generated from declarative `plugin.yml` sources through [Agent Plugins Builder 0.0.9](https://github.com/HiAi-gg/agent-plugins-builder) and must remain reproducible from them. See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for the regenerate → validate → compare workflow.
 
 ## Contributing
 

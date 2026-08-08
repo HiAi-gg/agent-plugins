@@ -3,16 +3,6 @@ name: review-rls
 description: "Review Row Level Security posture for a Supabase project: which tables have RLS enabled, which policies exist, and whether anon/authenticated access is over-permissive. Use when auditing a Supabase app's access control or before exposing a table via the API."
 ---
 
----
-name: review-rls
-description: Review Row Level Security posture for a Supabase project: which tables have RLS enabled, which policies exist, and whether anon/authenticated access is over-permissive. Use when auditing a Supabase app's access control or before exposing a table via the API.
-license: MIT
-compatibility: Requires the supabase MCP server configured in this plugin with a project --apiUrl; RLS review may also need SQL access (Supabase dashboard/SQL editor or a client-side SQL tool).
-metadata:
-  plugin: supabase
-  kind: security-review
----
-
 # Review Row Level Security (RLS)
 
 Use this skill when an agent must assess whether a Supabase project's data is

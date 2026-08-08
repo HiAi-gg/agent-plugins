@@ -3,16 +3,6 @@ name: test-web-flow
 description: "Walk a multi-step user flow in a real browser with agent-browser: navigate, fill, submit, verify each step, and report results. Use when asked to verify a signup, checkout, onboarding, or other multi-step web flow."
 ---
 
----
-name: test-web-flow
-description: Walk a multi-step user flow in a real browser with agent-browser: navigate, fill, submit, verify each step, and report results. Use when asked to verify a signup, checkout, onboarding, or other multi-step web flow.
-license: MIT
-compatibility: Requires the agent-browser CLI (v0.31.x) with Chrome for Testing installed.
-metadata:
-  plugin: agent-browser
-  kind: flow-testing
----
-
 # Test a Multi-Step Web Flow
 
 Use this skill when an agent must verify that a multi-step user journey works

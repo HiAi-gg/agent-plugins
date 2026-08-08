@@ -1,12 +1,28 @@
 # Development
 
+## Authoring vs distribution boundary
+
+This repository keeps both the **authoring sources** and the **generated
+distribution files** committed side by side:
+
+- Authoring sources (edit these, never ship them): `plugin.yml`,
+  `skills-src/<name>/*.md`
+- Generated distribution files (what users install): `plugin.json`,
+  `mcp.json` (when applicable), `skills/*/SKILL.md`, plus `README.md`,
+  `LICENSE` and — for postgresql — `packages/postgres-mcp/`
+
+Users should copy only the distribution files; `plugin.yml` and `skills-src/`
+are intentionally not part of an installed plugin (Doctor reports them as
+informational `DOC-5003` when present). See the collection README sections
+"For Users: Installing Plugins" and "For Developers: Modifying Plugins".
+
 ## Canonical Builder workflow
 
 All 13 plugins are generated from declarative `plugin.yml` sources through
-**Agent Plugins Builder 0.0.8** (public CLI:
+**Agent Plugins Builder 0.0.9** (public CLI:
 
 ```bash
-bunx @hiai-gg/agent-plugins-builder --version   # 0.0.8
+bunx @hiai-gg/agent-plugins-builder --version   # 0.0.9
 ```
 
 The canonical source for each plugin is:
