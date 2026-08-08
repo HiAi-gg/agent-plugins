@@ -4,8 +4,8 @@ description: "Research and summarize a Notion workspace: find pages, gather cont
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-notion
-repository: https://github.com/HiAi-gg/agent-plugin-notion
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - notion

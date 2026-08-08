@@ -4,8 +4,8 @@ description: "Investigate and triage production errors with Sentry: issues, even
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-sentry
-repository: https://github.com/HiAi-gg/agent-plugin-sentry
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - sentry

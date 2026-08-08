@@ -4,8 +4,8 @@ description: "Browse, test, and debug web pages with the agent-browser CLI: agen
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-agent-browser
-repository: https://github.com/HiAi-gg/agent-plugin-agent-browser
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - agent-browser

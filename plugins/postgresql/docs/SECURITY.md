@@ -61,7 +61,7 @@ connection-level options in Layer 1 remain in force.
 ### Layer 3 — Tool surface
 
 The MCP exposes **no write tool**. `analyze_query` (`EXPLAIN ANALYZE`) is
-deliberately omitted in v0.0.1. The only SQL-executing tool is `query`,
+deliberately omitted. The only SQL-executing tool is `query`,
 documented read-only.
 
 ### Layer 4 — Input checks (`query-safety.ts`)
@@ -117,6 +117,6 @@ crashing. `slow_queries` returns `available: false` with a clear reason when
 
 ## Non-goals
 
-- No write mode in v0.0.1.
+- No write mode.
 - No recommendation to grant superuser casually.
 - No automatic `VACUUM`, `REINDEX`, `pg_terminate_backend`.

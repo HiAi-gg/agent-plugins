@@ -72,5 +72,5 @@ Common patterns:
 - Read-only: `locks` and `database_activity` only.
 - **Never terminate sessions automatically.** Termination is an
   administrative action; recommend it, never execute it (the plugin has no
-  such tool in v0.0.1).
+  such tool).
 

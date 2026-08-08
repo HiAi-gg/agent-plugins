@@ -4,8 +4,8 @@ description: "Current library and framework documentation via Context7's first-p
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-context7
-repository: https://github.com/HiAi-gg/agent-plugin-context7
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - context7

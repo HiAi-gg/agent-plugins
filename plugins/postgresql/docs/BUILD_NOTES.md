@@ -45,7 +45,8 @@ Five focused skills (no single "postgresql-expert"): `inspect-database`,
 
 ## Runtime testing
 
-- Security gate: 19/19 cases on PostgreSQL 16 (and re-run on PostgreSQL 14).
+- Security gate: 30 cases on PostgreSQL 16 (19-case gate re-run on PostgreSQL
+  14).
 - Version matrix: PostgreSQL 14 + 16.
 - Credential gate: no leakage in errors/stderr.
 - `pg_stat_statements` present and absent environments.
@@ -54,7 +55,7 @@ Five focused skills (no single "postgresql-expert"): `inspect-database`,
 
 ## Limitations
 
-- Read-only only (v0.0.1).
+- Read-only only.
 - Requires `DATABASE_URL` at the client level.
 - `pg_stat_statements` optional.
 - Health signals are signals, not diagnoses.

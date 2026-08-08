@@ -16,7 +16,7 @@ cases with the F-1/F-2/F-3 regression coverage in the 0.0.2 fix):
 | ----------------- | ----------- | ----------- | ---------- | ---------------------------------------------------------- |
 | 14 (alpine)       | TESTED      | 13/13 tools | 19/19 gate | older supported major                                      |
 | 15 (alpine)       | TESTED      | 13/13 tools | 19/19 gate |                                                            |
-| 16 (alpine)       | TESTED      | 13/13 tools | 19/19 gate | current stable major                                       |
+| 16 (alpine)       | TESTED      | 13/13 tools | 30/30 gate | current stable major; extended 0.0.2 gate re-verified      |
 | 17 (alpine)       | TESTED      | 13/13 tools | 19/19 gate |                                                            |
 | 18 (alpine)       | TESTED      | 13/13 tools | 19/19 gate | current stable major; full first-class support (see below) |
 | 19 beta2 (alpine) | BETA TESTED | 13/13 tools | 19/19 gate | pre-release compatibility target; NOT production-supported |

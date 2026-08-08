@@ -101,7 +101,7 @@ boundary. No build step is required.
 ```
 
 `--disable-multi-cluster` runs all tools against the default cluster/context.
-This v0.0.1 is an **inspection/diagnostics** plugin, not a cluster automation
+This version is an **inspection/diagnostics** plugin, not a cluster automation
 plugin.
 
 ## Why is the server pinned to 0.0.65 and not 0.0.66?

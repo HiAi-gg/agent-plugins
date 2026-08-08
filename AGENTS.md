@@ -54,12 +54,14 @@ python3 scripts/validate_plugin.py plugins/<name>                      # officia
 Collection-wide:
 
 ```bash
-scripts/validate-all.sh        # regenerate → validate → compare for every plugin
+scripts/repro-check.sh         # regenerate → compare for every plugin (Builder 0.0.9)
 ```
 
 ## Documentation rules
 
-- Root README = catalog (13-row table, no essays before it).
+- Root README = ecosystem landing page: positioning ("Build, validate, and
+  use portable Agent Plugins"), Builder/Doctor navigation, and the 13-row
+  plugin table — keep the table complete and the surrounding prose concise.
 - Per-plugin docs live in `plugins/<name>/docs/`.
 - Keep docs factual; never claim untested compatibility or vendor
   endorsement.

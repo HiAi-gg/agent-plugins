@@ -4,8 +4,8 @@ description: "Inspect and diagnose Kubernetes clusters: pods, resources, events,
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-kubernetes
-repository: https://github.com/HiAi-gg/agent-plugin-kubernetes
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - kubernetes

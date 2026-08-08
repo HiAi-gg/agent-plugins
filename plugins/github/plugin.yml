@@ -4,8 +4,8 @@ description: "Inspect and work with GitHub: pull requests, issues, CI, and repos
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-github
-repository: https://github.com/HiAi-gg/agent-plugin-github
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - github

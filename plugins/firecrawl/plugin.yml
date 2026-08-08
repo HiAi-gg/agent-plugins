@@ -4,8 +4,8 @@ description: "Search, scrape, crawl, and extract from the web with Firecrawl's o
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-firecrawl
-repository: https://github.com/HiAi-gg/agent-plugin-firecrawl
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - firecrawl

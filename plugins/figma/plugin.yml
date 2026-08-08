@@ -4,8 +4,8 @@ description: "Bring Figma design context into agent workflows: inspect design co
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-figma
-repository: https://github.com/HiAi-gg/agent-plugin-figma
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - figma

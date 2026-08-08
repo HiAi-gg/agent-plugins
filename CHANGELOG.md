@@ -6,6 +6,28 @@ documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Root README is now the ecosystem landing page: "Build, validate, and use
+  portable Agent Plugins", with Agent Plugins Ecosystem navigation linking
+  the collection, Builder (0.0.9), and Doctor (0.0.6), a 13-row plugin table
+  with integration/status/trust labels, CI evidence, and a link to the
+  v0.0.2 release.
+- All 13 plugin `homepage`/`repository` URLs fixed from the dead
+  `github.com/HiAi-gg/agent-plugin-*` URLs to the collection repo
+  (`HiAi-gg/agent-plugins`) and regenerated through Builder 0.0.9.
+- 12 per-plugin `BUILDER_PROVENANCE.md` docs updated to the plural package
+  `@hiai-gg/agent-plugins-builder` **0.0.9** and the current plugin version
+  0.0.2.
+- Root `AGENTS.md` collection-wide validation command corrected to the
+  existing `scripts/repro-check.sh`.
+- Stale `19/19` security-gate references in current docs updated to the
+  30-case gate (0.0.2).
+- Stale 0.0.1 version references removed from the PostgreSQL and Kubernetes
+  plugin docs and PostgreSQL skill sources.
+
 ## [0.0.2] — 2026-08-08
 
 ### Changed

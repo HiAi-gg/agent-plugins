@@ -4,8 +4,8 @@ description: "Safe, read-only PostgreSQL inspection, query diagnosis, performanc
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-postgresql
-repository: https://github.com/HiAi-gg/agent-plugin-postgresql
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - postgresql

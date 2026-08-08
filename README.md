@@ -1,33 +1,84 @@
 # Agent Plugins
 
-A curated collection of portable [Agent Plugins](https://agent-plugins.org/) with trusted MCP and CLI integrations, focused Agent Skills, safe defaults, and reproducible builds.
+**Build, validate, and use portable Agent Plugins.**
+
+This is HiAI's curated collection of portable
+[Agent Plugins](https://agent-plugins.org/) — trusted MCP and CLI
+integrations paired with focused Agent Skills, safe defaults, and
+reproducible builds. It ships alongside the two tools that make the format
+work end to end:
+
+- **[Agent Plugins Builder](https://github.com/HiAi-gg/agent-plugins-builder)**
+  — create, migrate, and package Agent Plugins from declarative sources.
+- **[Agent Plugins Doctor](https://github.com/HiAi-gg/agent-plugins-doctor)**
+  — validate, diagnose, and safely fix Agent Plugins.
+
+Every plugin here is generated from a declarative `plugin.yml` source,
+byte-identical to a fresh **Builder 0.0.9** regeneration, and passes the
+**Doctor 0.0.6** validator.
 
 [![Agent Plugins](https://img.shields.io/badge/Agent%20Plugins-1.0.0-blue)](https://agent-plugins.org/)
 [![Builder](https://img.shields.io/badge/Builder-0.0.9-purple)](https://github.com/HiAi-gg/agent-plugins-builder)
+[![Doctor](https://img.shields.io/badge/Doctor-0.0.6-teal)](https://github.com/HiAi-gg/agent-plugins-doctor)
+[![Release](https://img.shields.io/badge/Release-v0.0.2-orange)](https://github.com/HiAi-gg/agent-plugins/releases/tag/v0.0.2)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![Plugins](https://img.shields.io/badge/Plugins-13-green)](#plugins)
 
+## Agent Plugins Ecosystem
+
+| Component | What it is | Get it |
+|---|---|---|
+| **Collection** (this repo) | 13 curated, validated Agent Plugins with safe defaults | [Browse the plugins](#plugins) |
+| **Builder** | Create, migrate, and package Agent Plugins | [HiAi-gg/agent-plugins-builder](https://github.com/HiAi-gg/agent-plugins-builder) · `bunx @hiai-gg/agent-plugins-builder` |
+| **Doctor** | Validate, diagnose, and safely fix Agent Plugins | [HiAi-gg/agent-plugins-doctor](https://github.com/HiAi-gg/agent-plugins-doctor) · `bunx @hiai-gg/agent-plugins-doctor` |
+
+Builder and Doctor are independent projects. They are linked here as
+tooling, not copied into this repository.
+
 ## Plugins
 
-| Plugin | What it does | Architecture | Runtime |
-|---|---|---|---|
-| [github](plugins/github) | GitHub repository investigation, pull-request review, issue triage and CI workflows. | Remote MCP + Skills | User auth required |
-| [agent-browser](plugins/agent-browser) | Agent-native browser navigation, inspection, interaction and web-flow testing. | CLI + Skills | Runtime verified |
-| [context7](plugins/context7) | Fetch current library and framework documentation when coding agents need up-to-date API knowledge. | MCP + Skills | Runtime verified |
-| [firecrawl](plugins/firecrawl) | Web search, scraping, crawling, extraction and research workflows. | MCP + Skills | Runtime verified |
-| [redis](plugins/redis) | Inspect and diagnose Redis data, streams, state and memory behavior. | MCP + Skills | Runtime verified |
-| [sentry](plugins/sentry) | Investigate production errors, regressions, events and performance issues. | Remote MCP + Skills | User auth required |
-| [supabase](plugins/supabase) | Inspect Supabase projects, schemas, authentication and Row Level Security. | MCP + Skills | Config verified |
-| [figma](plugins/figma) | Bring design context into agent workflows and support design-to-code tasks. | Remote MCP + Skills | User auth required |
-| [cloudflare](plugins/cloudflare) | Inspect and diagnose Workers, deployments, requests, DNS and Cloudflare configuration. | Remote MCP + Skills | User auth required |
-| [notion](plugins/notion) | Search, understand and summarize workspace knowledge and project information. | Remote MCP + Skills | User auth required |
-| [docker](plugins/docker) | Safe Docker and Docker Compose inspection and troubleshooting workflows. | Skills-only | Skills-only |
-| [kubernetes](plugins/kubernetes) | Read-first Kubernetes inspection, workload diagnosis and cluster troubleshooting. | MCP + Skills | Runtime verified |
-| [postgresql](plugins/postgresql) | Read-only PostgreSQL inspection, query diagnosis, performance analysis and database health workflows powered by the bundled HiAI PostgreSQL MCP. | Bundled MCP + Skills | Runtime verified |
+The collection contains **exactly 13 active plugins**. Runtime status follows
+the vocabulary in [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md); trust
+labels are defined in [docs/TRUST_POLICY.md](docs/TRUST_POLICY.md).
+
+| Plugin | What it does | Integration | Status | Trust |
+|---|---|---|---|---|
+| [github](plugins/github) | Review pull requests, triage issues, and investigate CI and repositories. | Remote MCP + Skills | User auth required | Trust A |
+| [agent-browser](plugins/agent-browser) | Drive a real browser: read accessible snapshots, click, fill, navigate, and test web flows. | CLI + Skills | Runtime verified | Trust B |
+| [context7](plugins/context7) | Fetch current library and framework documentation when coding agents need up-to-date API knowledge. | MCP + Skills | Runtime verified | Trust A |
+| [firecrawl](plugins/firecrawl) | Search, scrape, crawl, and extract structured data from the web. | MCP + Skills | Runtime verified | Trust A |
+| [redis](plugins/redis) | Inspect and diagnose Redis data, streams, and memory behavior. | MCP + Skills | Runtime verified | Trust A |
+| [sentry](plugins/sentry) | Triage production errors, regressions, and performance issues. | Remote MCP + Skills | User auth required | Trust A |
+| [supabase](plugins/supabase) | Inspect Supabase schemas, data access, Row Level Security, and auth. | MCP + Skills | Config verified | Trust A |
+| [figma](plugins/figma) | Bring Figma design context into agent workflows and support design-to-code tasks. | Remote MCP + Skills | User auth required | Trust A |
+| [cloudflare](plugins/cloudflare) | Inspect and debug Workers, DNS, request handling, and Cloudflare configuration. | Remote MCP + Skills | User auth required | Trust A |
+| [notion](plugins/notion) | Search, understand, and summarize Notion workspace knowledge. | Remote MCP + Skills | User auth required | Trust A |
+| [docker](plugins/docker) | Safe Docker and Compose inspection and troubleshooting workflows. | Skills-only | Skills-only | Trust A |
+| [kubernetes](plugins/kubernetes) | Read-first Kubernetes inspection, workload diagnosis, and cluster troubleshooting. | MCP + Skills | Runtime verified | Trust B |
+| [postgresql](plugins/postgresql) | Safe, read-only PostgreSQL inspection, query diagnosis, and health workflows — powered by the **bundled HiAI Native MCP**. | Bundled MCP + Skills | Runtime verified | HiAI Native |
+
+**Trust labels**: **Trust A** = first-party / vendor-owned upstream (most
+plugins); **Trust B** = established community upstream that passed explicit
+review (agent-browser, kubernetes); **HiAI Native** = runtime owned and
+maintained directly by HiAI (postgresql's bundled MCP).
+
+**PostgreSQL**: the postgresql plugin is the collection's **HiAI Native**
+highlight — its MCP server is bundled with the plugin and maintained by HiAI
+(no third-party PostgreSQL MCP dependency). PostgreSQL **14–18 are tested**
+and **19 beta compatibility is tested** (pre-release; not
+production-supported). See [docs/POSTGRESQL_SUPPORT.md](docs/POSTGRESQL_SUPPORT.md).
 
 ## Why Agent Plugins
 
-Agent Plugins is a portable, vendor-neutral standard for packaging Agent Skills and MCP servers so they work across compatible clients. This repository publishes HiAI's plugins in that format — one structure, reproducible from declarative sources.
+Agent Plugins is a portable, vendor-neutral standard for packaging Agent
+Skills and MCP servers so they work across compatible clients. This
+repository publishes HiAI's plugins in that format — one structure,
+reproducible from declarative sources through Agent Plugins Builder.
+
+Every plugin ships **safe defaults**: read/inspect-first behavior, no
+credentials committed, no write-capable defaults, and no arbitrary community
+MCP dependencies. See [docs/TRUST_POLICY.md](docs/TRUST_POLICY.md) and
+[docs/SECURITY.md](SECURITY.md).
 
 ## For Users: Installing Plugins
 
@@ -87,7 +138,7 @@ plugins/<name>/skills-src/<name>/*.md
 
 Edit **those** files (plus per-plugin content such as `README.md`, `LICENSE`,
 `docs/`, and postgresql's `packages/postgres-mcp`), then regenerate the
-structural output with Agent Plugins Builder:
+structural output with Agent Plugins Builder 0.0.9:
 
 ```bash
 bunx @hiai-gg/agent-plugins-builder create \
@@ -100,6 +151,34 @@ Never hand-edit generated structural files (`plugin.json`, `mcp.json`,
 [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for the regenerate → validate →
 compare workflow and [CONTRIBUTING.md](CONTRIBUTING.md) for contribution rules.
 
+## Build & Validate
+
+**Latest release: [v0.0.2](https://github.com/HiAi-gg/agent-plugins/releases/tag/v0.0.2).**
+
+All 13 plugins are generated from declarative `plugin.yml` sources through
+[Agent Plugins Builder 0.0.9](https://github.com/HiAi-gg/agent-plugins-builder)
+and must remain reproducible from them. Every plugin also passes
+[Agent Plugins Doctor 0.0.6](https://github.com/HiAi-gg/agent-plugins-doctor)
+and independent validation against the official 1.0.0 schemas. See
+[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for the full workflow.
+
+### CI evidence
+
+Every pull request and push to `main` runs
+[`.github/workflows/validate.yml`](.github/workflows/validate.yml):
+
+- **Exactly 13 plugins** — additions, removals, and renames fail CI.
+- **Builder reproducibility** — all 13 plugins are regenerated with Builder
+  0.0.9 and `plugin.json`, `mcp.json`, and every `skills/*/SKILL.md` must be
+  byte-identical to the committed files.
+- **Doctor 0.0.6** — the ecosystem validator runs on all 13 plugins.
+- **Secret scan** — secret-like literals are rejected across generated
+  content and plugin sources.
+
+The weekly [`.github/workflows/release-check.yml`](.github/workflows/release-check.yml)
+re-runs the same reproducibility and Doctor gates plus the bundled PostgreSQL
+MCP unit tests.
+
 ## Categories
 
 - **Developer Workflow**: GitHub, Agent Browser, Docker, Kubernetes, PostgreSQL
@@ -110,34 +189,24 @@ compare workflow and [CONTRIBUTING.md](CONTRIBUTING.md) for contribution rules.
 - **Infrastructure**: Cloudflare
 - **Productivity**: Notion
 
-## Agent Plugin Tooling
-
-| Tool | Purpose | Repository |
-|---|---|---|
-| [Agent Plugins Builder](https://github.com/HiAi-gg/agent-plugins-builder) | Create, migrate and package Agent Plugins. | `HiAi-gg/agent-plugins-builder` |
-| [Agent Plugins Doctor](https://github.com/HiAi-gg/agent-plugins-doctor) | Validate, diagnose and safely fix Agent Plugins. | `HiAi-gg/agent-plugins-doctor` |
-
-Builder and Doctor are independent projects. They are linked here as tooling, not copied into this repository.
-
 ## Trust & Security
 
 - **Trust A**: first-party/vendor-owned MCP or CLI (most plugins).
-- **Trust B**: established community upstream that passed explicit review — currently Kubernetes (`containers/kubernetes-mcp-server`).
-- **HiAI Native**: runtime owned and maintained directly by HiAI — currently PostgreSQL (bundled MCP).
+- **Trust B**: established community upstream that passed explicit review —
+  currently agent-browser (`vercel-labs/agent-browser` CLI) and kubernetes
+  (`containers/kubernetes-mcp-server`).
+- **HiAI Native**: runtime owned and maintained directly by HiAI — currently
+  PostgreSQL (bundled MCP).
 
-See [docs/TRUST_POLICY.md](docs/TRUST_POLICY.md). All plugins default to read/inspect-first behavior; credentials are never committed.
-
-## Compatibility
-
-See [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md) for per-plugin runtime evidence.
+All plugins default to read/inspect-first behavior; credentials are never
+committed. See [docs/TRUST_POLICY.md](docs/TRUST_POLICY.md) and
+[docs/COMPATIBILITY.md](docs/COMPATIBILITY.md) for the full policy and
+per-plugin runtime evidence.
 
 ## PostgreSQL Support
 
-PostgreSQL 14–18 tested; PostgreSQL 19 beta compatibility tested. See [docs/POSTGRESQL_SUPPORT.md](docs/POSTGRESQL_SUPPORT.md).
-
-## Build & Validate
-
-All 13 plugins are generated from declarative `plugin.yml` sources through [Agent Plugins Builder 0.0.9](https://github.com/HiAi-gg/agent-plugins-builder) and must remain reproducible from them. See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for the regenerate → validate → compare workflow.
+PostgreSQL 14–18 tested; PostgreSQL 19 beta compatibility tested. See
+[docs/POSTGRESQL_SUPPORT.md](docs/POSTGRESQL_SUPPORT.md).
 
 ## Contributing
 

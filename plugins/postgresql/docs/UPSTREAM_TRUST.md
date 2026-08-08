@@ -4,7 +4,7 @@ This plugin intentionally has a small, first-party dependency chain.
 
 | Dependency | Owner | License | Trust level | Version | Why trusted |
 |---|---|---|---|---|---|
-| HiAI PostgreSQL MCP (`packages/postgres-mcp`) | HiAI (this plugin) | MIT | **First party (bundled)** | 0.0.1 | Maintained as part of this plugin; no third-party PostgreSQL MCP |
+| HiAI PostgreSQL MCP (`packages/postgres-mcp`) | HiAI (this plugin) | MIT | **First party (bundled)** | 0.0.2 | Maintained as part of this plugin; no third-party PostgreSQL MCP |
 | `@modelcontextprotocol/sdk` | MCP project (Anthropic et al.) | MIT | **TRUST A — First party** (official MCP SDK) | 1.30.0 | Official protocol SDK, widely used |
 | Bun.SQL (`Bun.SQL`) | Bun (Oven) | MIT | **TRUST A — First party** (bundled with Bun runtime) | Bun 1.3.x | Official Bun PostgreSQL driver, part of the Bun runtime |
 | Zod | Zod contributors (Colin McDonnell) | MIT | **TRUST A — Established** | 3.25.x | De-facto standard schema library |

@@ -10,7 +10,7 @@ this repository, not a separate product).
 agent-plugin-postgresql
 │
 ├── plugin.yml                 # declarative Builder source
-├── plugin.json                # Agent Plugins manifest (0.0.1)
+├── plugin.json                # Agent Plugins manifest (0.0.2)
 ├── mcp.json                   # launches the bundled MCP via ${PLUGIN_ROOT}
 │
 ├── skills/                    # 5 Agent Skills
@@ -75,4 +75,4 @@ tools never crash the server.
 
 - `bun` (Bun.SQL driver + Bun runtime).
 - No HTTP server, no Elysia/Express/Fastify, no web UI.
-- stdio transport only in v0.0.1.
+- stdio transport only.

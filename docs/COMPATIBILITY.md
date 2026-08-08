@@ -27,7 +27,7 @@ Runtime status vocabulary:
 | notion | User auth required (Config verified) | Notion hosted MCP; OAuth requires a user |
 | docker | Skills-only | docker / docker compose CLI workflows |
 | kubernetes | Runtime verified | kubernetes-mcp-server@0.0.65 — full read-only gate on disposable k3s |
-| postgresql | Runtime verified | bundled HiAI MCP — PG 14–18 tested, 19 beta tested; security gate 19/19 |
+| postgresql | Runtime verified | bundled HiAI MCP — PG 14–18 tested, 19 beta tested; read-only security gate PASS (30 cases, extended from 19 in 0.0.2) |
 
 ## Client compatibility
 

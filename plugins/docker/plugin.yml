@@ -4,8 +4,8 @@ description: "Inspect, diagnose, and review local Docker environments and Docker
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-docker
-repository: https://github.com/HiAi-gg/agent-plugin-docker
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - docker

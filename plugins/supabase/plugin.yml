@@ -4,8 +4,8 @@ description: "Investigate Supabase-backed apps: schema, data access, RLS, and au
 author:
   name: HiAI
   url: https://github.com/HiAi-gg
-homepage: https://github.com/HiAi-gg/agent-plugin-supabase
-repository: https://github.com/HiAi-gg/agent-plugin-supabase
+homepage: https://github.com/HiAi-gg/agent-plugins
+repository: https://github.com/HiAi-gg/agent-plugins
 license: MIT
 keywords:
   - supabase

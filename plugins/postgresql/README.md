@@ -4,7 +4,7 @@
 and database health workflows for AI agents.**
 
 An [Agent Plugin](https://agent-plugins.org/) (spec **1.0.0**), version
-**0.0.1**.
+**0.0.2**.
 
 ## What the plugin does
 
@@ -32,7 +32,7 @@ not a regex — as the primary safety boundary.
 - a migration tool,
 - a write-capable database automation system.
 
-Version 0.0.1 is **deliberately read-only**. There is no write mode.
+The plugin is **deliberately read-only**. There is no write mode.
 
 ## Read-only guarantee
 
@@ -131,7 +131,7 @@ or vacuum automatically.
 | `database_sizes`    | database, largest tables/indexes                   |
 | `health_summary`    | compact diagnostic summary                         |
 
-`analyze_query` (`EXPLAIN ANALYZE`) is intentionally **not** exposed in v0.0.1.
+`analyze_query` (`EXPLAIN ANALYZE`) is intentionally **not** exposed.
 
 ## Supported PostgreSQL versions
 
@@ -210,7 +210,7 @@ See `docs/SECURITY.md` and `docs/SECURITY_VERIFICATION.md`.
 
 ## Limitations
 
-- Read-only by design (v0.0.1); no write mode.
+- Read-only by design; no write mode.
 - No `EXPLAIN ANALYZE` (deliberately omitted).
 - `DATABASE_URL` is required; the server will not start without it.
 - `pg_stat_statements` optional and environment-dependent.

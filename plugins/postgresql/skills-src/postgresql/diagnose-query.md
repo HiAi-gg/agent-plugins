@@ -63,7 +63,7 @@ Rank causes by evidence:
 
 - Concrete, testable recommendations: add index X (as a suggestion), run
   `ANALYZE` (a write-adjacent operation — requires explicit user intent; the
-  plugin has no write tools in v0.0.1), rewrite a specific predicate.
+  plugin has no write tools), rewrite a specific predicate.
 - Say what each change would change in the plan.
 
 ## Guardrails
