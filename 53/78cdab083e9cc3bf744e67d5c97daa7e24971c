@@ -1,0 +1,143 @@
+plugins/supabase/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/github/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/agent-browser/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/postgresql/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/postgresql/docs/SECURITY.md
+  s_812c633d48fcbe::t_eb9be74fb64a2b 120
+  s_812c633d48fcbe::t_9c7fe18d616089 64
+plugins/postgresql/docs/ARCHITECTURE.md
+  s_812c633d48fcbe::t_2d5b15d6c54629 13
+  s_812c633d48fcbe::t_e775d0315301ae 78
+plugins/sentry/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+CHANGELOG.md
+  s_812c633d48fcbe::t_161b13e04ae81b 9-30
+plugins/postgresql/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_a11602d706fded 14,30
+plugins/postgresql/docs/COMPATIBILITY.md
+  s_812c633d48fcbe::t_9d38c3752617c6 19
+plugins/supabase/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/redis/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/sentry/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/cloudflare/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/context7/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/figma/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/postgresql/README.md
+  s_812c633d48fcbe::t_2c8629746cee90 7
+  s_812c633d48fcbe::t_f9bc2afbb09fbc 35
+  s_812c633d48fcbe::t_91fb190f624084 134
+  s_812c633d48fcbe::t_50ade9fb677ae2 213
+plugins/postgresql/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/postgresql/skills-src/postgresql/diagnose-locks.md
+  s_812c633d48fcbe::t_30d5e568d58016 75
+plugins/agent-browser/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/notion/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+docs/COMPATIBILITY.md
+  s_812c633d48fcbe::t_ec9012a0c08644 30
+plugins/redis/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/sentry/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/github/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/redis/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/kubernetes/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/firecrawl/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/agent-browser/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/figma/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+docs/POSTGRESQL_SUPPORT.md
+  s_812c633d48fcbe::t_d66d50eebeeb33 18-23,27-30
+  s_812c633d48fcbe::t_ac44c1c2bd684b 31
+plugins/postgresql/skills/diagnose-query/SKILL.md
+  s_812c633d48fcbe::t_98a8f7cf723482 66
+plugins/figma/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/supabase/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/cloudflare/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/github/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/docker/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/postgresql/skills-src/postgresql/diagnose-query.md
+  s_812c633d48fcbe::t_9c85e1c14641b3 66
+plugins/kubernetes/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/notion/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/docker/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/kubernetes/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/cloudflare/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/kubernetes/README.md
+  s_812c633d48fcbe::t_a329970694b084 104
+plugins/postgresql/skills/diagnose-locks/SKILL.md
+  s_812c633d48fcbe::t_98a8f7cf723482 75
+AGENTS.md
+  s_812c633d48fcbe::t_46cc254d24d818 57
+  s_812c633d48fcbe::t_8abb05d676ba83 62-64
+README.md
+  s_812c633d48fcbe::t_64e2a98116c43f 3-18,22-23,27-37,40-69,73-81,141,154-181,195-199,201-204,208-209
+plugins/docker/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/context7/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/context7/plugin.yml
+  s_9edb544c208e66::t_397d06f587a495 7-8
+plugins/firecrawl/plugin.json
+  s_812c633d48fcbe::t_16b426fb10d19f 10-11
+plugins/notion/plugin.yml
+  s_812c633d48fcbe::t_00f7e743068ccb 7-8
+plugins/firecrawl/docs/BUILDER_PROVENANCE.md
+  s_812c633d48fcbe::t_3586407165a449 5-6,12
+plugins/postgresql/docs/BUILD_NOTES.md
+  s_812c633d48fcbe::t_174b17edba0e1f 58
+  s_812c633d48fcbe::t_16f4d130e79022 48-49
+plugins/postgresql/docs/UPSTREAM_TRUST.md
+  s_812c633d48fcbe::t_b37e06d3ac23d6 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "5378cdab083e9cc3bf744e67d5c97daa7e24971c",
+  "prompts": {},
+  "sessions": {
+    "s_812c633d48fcbe": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_01c93af8bffe31xL2EmmiT2nni",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "vlgalib <vlgalib@users.noreply.github.com>"
+    },
+    "s_9edb544c208e66": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_01c93aedcffe0AeMDyKkSUkJy4",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "vlgalib <vlgalib@users.noreply.github.com>"
+    }
+  }
+}
