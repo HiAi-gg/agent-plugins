@@ -77,6 +77,24 @@ python3 scripts/validate_plugin.py plugins/<name>
   for unit tests; with a PostgreSQL container,
   `DATABASE_URL=... bun run tests/security-gate.mjs` for the security gate.
 
+## Client marketplace manifests
+
+The three client marketplace indexes (`.agents/plugins/marketplace.json`,
+`.cursor-plugin/marketplace.json`, `.github/plugin/marketplace.json`) are
+generated artifacts too — derived from the canonical `plugins/<name>/plugin.json`
+files, never hand-edited:
+
+```bash
+bun run scripts/generate-marketplaces.ts            # write the manifests
+bun run scripts/generate-marketplaces.ts --check    # exit 1 on drift
+bun run scripts/validate-marketplaces.ts            # semantic validation
+```
+
+Any change to a plugin's canonical metadata (name, version, description,
+homepage, repository, license, keywords) must be reflected by re-running the
+generator; CI enforces the check. See docs/INSTALLATION.md and
+docs/MULTI_CLIENT_DISTRIBUTION_REPORT.md.
+
 ## CI
 
 See `.github/workflows/`. Static validation (Builder reproducibility, schema

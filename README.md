@@ -26,11 +26,11 @@ byte-identical to a fresh **Builder 0.0.9** regeneration, and passes the
 
 ## Agent Plugins Ecosystem
 
-| Component | What it is | Get it |
-|---|---|---|
-| **Collection** (this repo) | 13 curated, validated Agent Plugins with safe defaults | [Browse the plugins](#plugins) |
-| **Builder** | Create, migrate, and package Agent Plugins | [HiAi-gg/agent-plugins-builder](https://github.com/HiAi-gg/agent-plugins-builder) · `bunx @hiai-gg/agent-plugins-builder` |
-| **Doctor** | Validate, diagnose, and safely fix Agent Plugins | [HiAi-gg/agent-plugins-doctor](https://github.com/HiAi-gg/agent-plugins-doctor) · `bunx @hiai-gg/agent-plugins-doctor` |
+| Component                  | What it is                                             | Get it                                                                                                                    |
+| -------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| **Collection** (this repo) | 13 curated, validated Agent Plugins with safe defaults | [Browse the plugins](#plugins)                                                                                            |
+| **Builder**                | Create, migrate, and package Agent Plugins             | [HiAi-gg/agent-plugins-builder](https://github.com/HiAi-gg/agent-plugins-builder) · `bunx @hiai-gg/agent-plugins-builder` |
+| **Doctor**                 | Validate, diagnose, and safely fix Agent Plugins       | [HiAi-gg/agent-plugins-doctor](https://github.com/HiAi-gg/agent-plugins-doctor) · `bunx @hiai-gg/agent-plugins-doctor`    |
 
 Builder and Doctor are independent projects. They are linked here as
 tooling, not copied into this repository.
@@ -41,21 +41,21 @@ The collection contains **exactly 13 active plugins**. Runtime status follows
 the vocabulary in [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md); trust
 labels are defined in [docs/TRUST_POLICY.md](docs/TRUST_POLICY.md).
 
-| Plugin | What it does | Integration | Status | Trust |
-|---|---|---|---|---|
-| [github](plugins/github) | Review pull requests, triage issues, and investigate CI and repositories. | Remote MCP + Skills | User auth required | Trust A |
-| [agent-browser](plugins/agent-browser) | Drive a real browser: read accessible snapshots, click, fill, navigate, and test web flows. | CLI + Skills | Runtime verified | Trust B |
-| [context7](plugins/context7) | Fetch current library and framework documentation when coding agents need up-to-date API knowledge. | MCP + Skills | Runtime verified | Trust A |
-| [firecrawl](plugins/firecrawl) | Search, scrape, crawl, and extract structured data from the web. | MCP + Skills | Runtime verified | Trust A |
-| [redis](plugins/redis) | Inspect and diagnose Redis data, streams, and memory behavior. | MCP + Skills | Runtime verified | Trust A |
-| [sentry](plugins/sentry) | Triage production errors, regressions, and performance issues. | Remote MCP + Skills | User auth required | Trust A |
-| [supabase](plugins/supabase) | Inspect Supabase schemas, data access, Row Level Security, and auth. | MCP + Skills | Config verified | Trust A |
-| [figma](plugins/figma) | Bring Figma design context into agent workflows and support design-to-code tasks. | Remote MCP + Skills | User auth required | Trust A |
-| [cloudflare](plugins/cloudflare) | Inspect and debug Workers, DNS, request handling, and Cloudflare configuration. | Remote MCP + Skills | User auth required | Trust A |
-| [notion](plugins/notion) | Search, understand, and summarize Notion workspace knowledge. | Remote MCP + Skills | User auth required | Trust A |
-| [docker](plugins/docker) | Safe Docker and Compose inspection and troubleshooting workflows. | Skills-only | Skills-only | Trust A |
-| [kubernetes](plugins/kubernetes) | Read-first Kubernetes inspection, workload diagnosis, and cluster troubleshooting. | MCP + Skills | Runtime verified | Trust B |
-| [postgresql](plugins/postgresql) | Safe, read-only PostgreSQL inspection, query diagnosis, and health workflows — powered by the **bundled HiAI Native MCP**. | Bundled MCP + Skills | Runtime verified | HiAI Native |
+| Plugin                                 | What it does                                                                                                               | Integration          | Status             | Trust       |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------- | ------------------ | ----------- |
+| [github](plugins/github)               | Review pull requests, triage issues, and investigate CI and repositories.                                                  | Remote MCP + Skills  | User auth required | Trust A     |
+| [agent-browser](plugins/agent-browser) | Drive a real browser: read accessible snapshots, click, fill, navigate, and test web flows.                                | CLI + Skills         | Runtime verified   | Trust B     |
+| [context7](plugins/context7)           | Fetch current library and framework documentation when coding agents need up-to-date API knowledge.                        | MCP + Skills         | Runtime verified   | Trust A     |
+| [firecrawl](plugins/firecrawl)         | Search, scrape, crawl, and extract structured data from the web.                                                           | MCP + Skills         | Runtime verified   | Trust A     |
+| [redis](plugins/redis)                 | Inspect and diagnose Redis data, streams, and memory behavior.                                                             | MCP + Skills         | Runtime verified   | Trust A     |
+| [sentry](plugins/sentry)               | Triage production errors, regressions, and performance issues.                                                             | Remote MCP + Skills  | User auth required | Trust A     |
+| [supabase](plugins/supabase)           | Inspect Supabase schemas, data access, Row Level Security, and auth.                                                       | MCP + Skills         | Config verified    | Trust A     |
+| [figma](plugins/figma)                 | Bring Figma design context into agent workflows and support design-to-code tasks.                                          | Remote MCP + Skills  | User auth required | Trust A     |
+| [cloudflare](plugins/cloudflare)       | Inspect and debug Workers, DNS, request handling, and Cloudflare configuration.                                            | Remote MCP + Skills  | User auth required | Trust A     |
+| [notion](plugins/notion)               | Search, understand, and summarize Notion workspace knowledge.                                                              | Remote MCP + Skills  | User auth required | Trust A     |
+| [docker](plugins/docker)               | Safe Docker and Compose inspection and troubleshooting workflows.                                                          | Skills-only          | Skills-only        | Trust A     |
+| [kubernetes](plugins/kubernetes)       | Read-first Kubernetes inspection, workload diagnosis, and cluster troubleshooting.                                         | MCP + Skills         | Runtime verified   | Trust B     |
+| [postgresql](plugins/postgresql)       | Safe, read-only PostgreSQL inspection, query diagnosis, and health workflows — powered by the **bundled HiAI Native MCP**. | Bundled MCP + Skills | Runtime verified   | HiAI Native |
 
 **Trust labels**: **Trust A** = first-party / vendor-owned upstream (most
 plugins); **Trust B** = established community upstream that passed explicit
@@ -127,6 +127,45 @@ files at plugin root"); they are intentionally kept in this repository as the
 reproducible authoring source (see below) and should not be copied into an
 installed plugin.
 
+### Multi-client marketplace distribution
+
+The collection ships Git marketplace manifests for the clients that support
+them, plus direct-install routes for the rest. Marketplace behavior is
+client-specific; see [docs/INSTALLATION.md](docs/INSTALLATION.md) for full
+per-client steps and [docs/CLIENT_DISTRIBUTION_MATRIX.md](docs/CLIENT_DISTRIBUTION_MATRIX.md)
+for the acceptance matrix.
+
+- **Codex / ChatGPT** — Git marketplace at
+  [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json)
+  (`source: "git-subdir"` entries); register with
+  `codex plugin marketplace add HiAi-gg/agent-plugins` then
+  `codex plugin add <name>@hiai-agent-plugins`. Live-verified against
+  `codex-cli 0.146.0` (13-plugin discovery, 5 end-to-end installs).
+- **Cursor** — team marketplace manifest at
+  [`.cursor-plugin/marketplace.json`](.cursor-plugin/marketplace.json)
+  (relative `./plugins/<name>` sources); import via Dashboard → Plugins →
+  Team Marketplaces → Import from Repo.
+- **GitHub Copilot** — marketplace at
+  [`.github/plugin/marketplace.json`](.github/plugin/marketplace.json)
+  (relative sources); register with `copilot plugin marketplace add HiAi-gg/agent-plugins`.
+- **VS Code** — **`Chat: Install Plugin From Source`** (paste
+  `https://github.com/HiAi-gg/agent-plugins`) or the
+  `chat.plugins.marketplaces` setting; VS Code reads the same
+  `.github/plugin/marketplace.json` Copilot manifest. This is the Agent
+  Plugins channel — distinct from the VS Code extension marketplace.
+- **Kiro** — no Git marketplace manifest exists; use **Powers** direct
+  install ("Import power from GitHub"/folder) or the curated kiro.dev/powers
+  directory. See [docs/INSTALLATION.md](docs/INSTALLATION.md).
+
+The manifests are generated (never hand-edited) from the canonical
+`plugins/<name>/plugin.json` files by
+[`scripts/generate-marketplaces.ts`](scripts/generate-marketplaces.ts) and
+validated by [`scripts/validate-marketplaces.ts`](scripts/validate-marketplaces.ts)
+in CI. Acceptance evidence, exact commands, and the honest per-client status
+(VERIFIED / DOCS VERIFIED / PARTIAL) are in
+[docs/MARKETPLACE_ACCEPTANCE.md](docs/MARKETPLACE_ACCEPTANCE.md) and
+[docs/MULTI_CLIENT_DISTRIBUTION_REPORT.md](docs/MULTI_CLIENT_DISTRIBUTION_REPORT.md).
+
 ## For Developers: Modifying Plugins
 
 The canonical source for every plugin is:
@@ -174,6 +213,9 @@ Every pull request and push to `main` runs
 - **Doctor 0.0.6** — the ecosystem validator runs on all 13 plugins.
 - **Secret scan** — secret-like literals are rejected across generated
   content and plugin sources.
+- **Marketplace drift + validation** — the three client marketplace manifests
+  must match a fresh deterministic generation (`generate-marketplaces.ts --check`)
+  and pass semantic validation (13 x 3 plugins, sources, no secrets).
 
 The weekly [`.github/workflows/release-check.yml`](.github/workflows/release-check.yml)
 re-runs the same reproducibility and Doctor gates plus the bundled PostgreSQL

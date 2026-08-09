@@ -110,3 +110,21 @@ jobs:
             echo "Potential secrets found"
             exit 1
           fi
+
+      # Gate 6: the three client marketplace manifests
+      # (.agents/plugins, .cursor-plugin, .github/plugin) must stay
+      # byte-identical to a fresh deterministic generation. The generator
+      # itself fails on active plugin count/name drift.
+      - name: Marketplace drift check
+        run: |
+          set -euo pipefail
+          bun run scripts/generate-marketplaces.ts --check
+
+      # Gate 7: semantic marketplace validation — exactly 13 plugins in every
+      # manifest, canonical names/versions/descriptions, correct source shapes
+      # (git-subdir for Codex, relative paths for Cursor/Copilot), every
+      # referenced plugin path exists, and no secret-like literals.
+      - name: Marketplace validation
+        run: |
+          set -euo pipefail
+          bun run scripts/validate-marketplaces.ts

@@ -1,0 +1,410 @@
+{
+  "name": "hiai-agent-plugins",
+  "interface": {
+    "displayName": "HiAI Agent Plugins"
+  },
+  "owner": {
+    "name": "HiAI",
+    "url": "https://github.com/HiAi-gg"
+  },
+  "metadata": {
+    "description": "HiAI's curated collection of 13 validated portable Agent Plugins: trusted MCP and CLI integrations paired with focused Agent Skills and safe defaults.",
+    "version": "0.0.2"
+  },
+  "plugins": [
+    {
+      "name": "github",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/github",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Inspect and work with GitHub: pull requests, issues, CI, and repositories via GitHub's official MCP server, with focused workflow skills.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "github",
+        "pull-requests",
+        "issues",
+        "ci",
+        "mcp",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "agent-browser",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/agent-browser",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Browse, test, and debug web pages with the agent-browser CLI: agent-native browser automation with focused workflow skills.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "agent-browser",
+        "browser",
+        "automation",
+        "web",
+        "testing",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "context7",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/context7",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Current library and framework documentation via Context7's first-party MCP server, with usage-discipline skills for when an agent should consult it.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "context7",
+        "documentation",
+        "libraries",
+        "mcp",
+        "agent-plugins",
+        "docs"
+      ]
+    },
+    {
+      "name": "firecrawl",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/firecrawl",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Search, scrape, crawl, and extract from the web with Firecrawl's official MCP server, with focused workflow skills.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "firecrawl",
+        "web",
+        "search",
+        "scrape",
+        "crawl",
+        "extract",
+        "mcp",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "redis",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/redis",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Inspect and work with Redis: keys, values, TTLs, hashes, lists, sets, streams, memory, and diagnostics via Redis' official MCP server.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "redis",
+        "cache",
+        "key-value",
+        "streams",
+        "memory",
+        "mcp",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "sentry",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/sentry",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Investigate and triage production errors with Sentry: issues, events, regressions, and performance — via Sentry's official hosted MCP endpoint.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "sentry",
+        "error-tracking",
+        "monitoring",
+        "performance",
+        "mcp",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "supabase",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/supabase",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Investigate Supabase-backed apps: schema, data access, RLS, and auth via Supabase's official PostgREST MCP server.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "supabase",
+        "postgrest",
+        "database",
+        "rls",
+        "auth",
+        "mcp",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "figma",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/figma",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Bring Figma design context into agent workflows: inspect design context, implement from design, map components, and compare code to design — via Figma's official MCP server.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "figma",
+        "design",
+        "design-tokens",
+        "components",
+        "mcp",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "cloudflare",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/cloudflare",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Inspect and debug Cloudflare: Workers, DNS, request handling, and configuration — via Cloudflare's official Code Mode MCP server.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "cloudflare",
+        "workers",
+        "dns",
+        "cdn",
+        "mcp",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "notion",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/notion",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Research and summarize a Notion workspace: find pages, gather context, and prepare project updates — via Notion's official hosted MCP server.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "notion",
+        "workspace",
+        "knowledge",
+        "project",
+        "mcp",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "docker",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/docker",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Inspect, diagnose, and review local Docker environments and Dockerfiles: containers, Compose projects, and best practices — skills-only.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "docker",
+        "containers",
+        "compose",
+        "dockerfile",
+        "devops",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "kubernetes",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/kubernetes",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Inspect and diagnose Kubernetes clusters: pods, resources, events, logs, and health — via a trusted read-only Kubernetes MCP server plus workflow skills.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "kubernetes",
+        "k8s",
+        "kubectl",
+        "devops",
+        "mcp",
+        "agent-plugins"
+      ]
+    },
+    {
+      "name": "postgresql",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/HiAi-gg/agent-plugins.git",
+        "path": "./plugins/postgresql",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "description": "Safe, read-only PostgreSQL inspection, query diagnosis, performance analysis, and database health workflows for AI agents, with a bundled HiAI PostgreSQL MCP server.",
+      "version": "0.0.2",
+      "author": {
+        "name": "HiAI",
+        "url": "https://github.com/HiAi-gg"
+      },
+      "homepage": "https://github.com/HiAi-gg/agent-plugins",
+      "repository": "https://github.com/HiAi-gg/agent-plugins",
+      "license": "MIT",
+      "keywords": [
+        "postgresql",
+        "postgres",
+        "sql",
+        "database",
+        "mcp",
+        "agent-plugins"
+      ]
+    }
+  ]
+}
