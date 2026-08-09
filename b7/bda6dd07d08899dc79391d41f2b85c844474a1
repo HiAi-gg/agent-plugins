@@ -1,0 +1,20 @@
+CHANGELOG.md
+  s_6f536a839186d9::t_e684af05909201 21
+  s_6f536a839186d9::t_585eb1560b5b70 26-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "b7bda6dd07d08899dc79391d41f2b85c844474a1",
+  "prompts": {},
+  "sessions": {
+    "s_6f536a839186d9": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_019c23b04ffeJwDWQGD8VxKZin",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "vlgalib <vlgalib@users.noreply.github.com>"
+    }
+  }
+}
