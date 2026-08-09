@@ -1,0 +1,31 @@
+docs/INSTALLATION.md
+  s_60ffcd76475bb3::t_4766f8e287c9e4 30,35,48-51
+docs/MULTI_CLIENT_DISTRIBUTION_REPORT.md
+  s_60ffcd76475bb3::t_553a76e2bb9fd5 49-53,59
+  s_60ffcd76475bb3::t_25bbff247b94e3 98,100-109
+  s_60ffcd76475bb3::t_a54eabd34a9b7d 143-149
+  s_60ffcd76475bb3::t_4191b9fb53ed56 160-161
+  s_60ffcd76475bb3::t_8a225c87813ab8 125,128-132,134,136
+docs/MARKETPLACE_ACCEPTANCE.md
+  s_60ffcd76475bb3::t_16bdb28543e345 36,39-41,49-50,53,56,64,67,70-75,77,96-107
+  s_60ffcd76475bb3::t_a54eabd34a9b7d 33
+docs/CLIENT_DISTRIBUTION_MATRIX.md
+  s_60ffcd76475bb3::t_a54eabd34a9b7d 80
+  s_60ffcd76475bb3::t_f791edd196200c 79,81-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "af9b1a993b7f19406d9c02d5ac9160ec4993b46f",
+  "prompts": {},
+  "sessions": {
+    "s_60ffcd76475bb3": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_019d1d5feffeV095rQujdp1hdK",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "vlgalib <vlgalib@users.noreply.github.com>"
+    }
+  }
+}
