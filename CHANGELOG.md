@@ -18,13 +18,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - All 13 plugin `homepage`/`repository` URLs fixed from the dead
   `github.com/HiAi-gg/agent-plugin-*` URLs to the collection repo
   (`HiAi-gg/agent-plugins`) and regenerated through Builder 0.0.9.
-- 12 per-plugin `BUILDER_PROVENANCE.md` docs updated to the plural package
+- 13 per-plugin `BUILDER_PROVENANCE.md` docs updated to the plural package
   `@hiai-gg/agent-plugins-builder` **0.0.9** and the current plugin version
   0.0.2.
 - Root `AGENTS.md` collection-wide validation command corrected to the
   existing `scripts/repro-check.sh`.
-- Stale `19/19` security-gate references in current docs updated to the
-  30-case gate (0.0.2).
+- Stale `19/19` security-gate references in current public compatibility
+  and support docs updated to the 30-case gate (0.0.2); historical release
+  and audit records retain their original per-version evidence and are
+  intentionally preserved.
 - Stale 0.0.1 version references removed from the PostgreSQL and Kubernetes
   plugin docs and PostgreSQL skill sources.
 
