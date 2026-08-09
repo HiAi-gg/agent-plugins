@@ -1,0 +1,55 @@
+.github/plugin/marketplace.json
+  s_daa1d54e12e3b3::t_8e670927aa61df 1-289
+scripts/validate-marketplaces.ts
+  s_daa1d54e12e3b3::t_f1be3e80c8e03a 14-15
+  s_daa1d54e12e3b3::t_57733c714e1d71 47,72-75,88-91,113-116,118-120,150-153,157-160,163-166,171-174,183-185,199-202,204-207,220-223,237-239
+  s_daa1d54e12e3b3::t_d7770aa9553f4c 1-13,16-46,48-71,76-87,92-112,117,121-149,154-156,161-162,167-170,175-182,186-198,203,208-219,224-236,240-246
+.github/workflows/validate.yml
+  s_daa1d54e12e3b3::t_57733c714e1d71 17
+  s_daa1d54e12e3b3::t_5997a3255a5e88 113-130
+docs/MARKETPLACE_ACCEPTANCE.md
+  s_daa1d54e12e3b3::t_0936e3327223a4 1-8,14-20,35-154
+  s_daa1d54e12e3b3::t_57733c714e1d71 9-13,21-34
+scripts/generate-marketplaces.ts
+  s_daa1d54e12e3b3::t_3fbad2bdc14675 96
+  s_daa1d54e12e3b3::t_57733c714e1d71 157-159,161-164,167-170,235-238,252-255,307-309,314-316,339-341,344-346
+  s_daa1d54e12e3b3::t_fbc126a106f110 18-19
+  s_daa1d54e12e3b3::t_add9fc79f99b07 6-9
+  s_daa1d54e12e3b3::t_ef25b4ebd10b44 1-5,10-17,20-95,97-156,160,165-166,171-234,239-251,256-306,310-313,317-338,342-343,347-355
+docs/INSTALLATION.md
+  s_daa1d54e12e3b3::t_57733c714e1d71 10-13,69
+  s_daa1d54e12e3b3::t_bb7877d8612822 1-9,14-68,70-159
+docs/MULTI_CLIENT_DISTRIBUTION_REPORT.md
+  s_daa1d54e12e3b3::t_895e6aa734c4b6 1-10,13,19-25,31-69,77-140,148-159
+  s_daa1d54e12e3b3::t_57733c714e1d71 11-12,14-18,26-30,70-76,141-147
+.agents/plugins/marketplace.json
+  s_daa1d54e12e3b3::t_8e670927aa61df 1-410
+.cursor-plugin/marketplace.json
+  s_daa1d54e12e3b3::t_8e670927aa61df 1-289
+README.md
+  s_daa1d54e12e3b3::t_a13f8ae02a4afc 130-150,153-168
+  s_daa1d54e12e3b3::t_57733c714e1d71 29-33,44-58
+  s_daa1d54e12e3b3::t_2a842a175192b1 216-218
+  s_daa1d54e12e3b3::t_64823cea3bacd2 151-152
+docs/CLIENT_DISTRIBUTION_MATRIX.md
+  s_daa1d54e12e3b3::t_57733c714e1d71 24-30,37,80
+  s_daa1d54e12e3b3::t_76b7520b48c1c7 1-23,31-36,38-79,81-90
+docs/DEVELOPMENT.md
+  s_daa1d54e12e3b3::t_2adfb5ed9ef290 80-97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "17b5abbce939202a6c93cc01e67db867d6e4c70d",
+  "prompts": {},
+  "sessions": {
+    "s_daa1d54e12e3b3": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_019ee5fa1ffeD1dFgjLrBZ68d4",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "vlgalib <vlgalib@users.noreply.github.com>"
+    }
+  }
+}
