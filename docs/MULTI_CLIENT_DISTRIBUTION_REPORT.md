@@ -46,18 +46,17 @@ bun run scripts/generate-marketplaces.ts            # writes the 3 manifests
 bun run scripts/generate-marketplaces.ts --check    # exit 1 on drift (determinism)
 bun run scripts/validate-marketplaces.ts            # 13 x 3 semantic validation
 
-# codex (verified live, clean CODEX_HOME, codex-cli 0.146.0)
-codex plugin marketplace add /path/to/agent-plugins       # PASS (local source)
-codex plugin marketplace list                             # PASS
-codex plugin list                                         # PASS (13 plugins)
-codex plugin add agent-browser@hiai-agent-plugins         # PASS (installed)
+# codex (verified live, clean CODEX_HOME, codex-cli 0.146.0, public GitHub main)
+codex plugin marketplace add HiAi-gg/agent-plugins         # PASS — exit 0 (post-push)
+codex plugin marketplace list                              # PASS — hiai-agent-plugins
+codex plugin list --available --json                       # PASS — exactly 13 plugins @ 0.0.2
+codex plugin add agent-browser@hiai-agent-plugins         # PASS (installed, enabled 0.0.2)
 codex plugin add context7@hiai-agent-plugins              # PASS
 codex plugin add github@hiai-agent-plugins                # PASS
 codex plugin add postgresql@hiai-agent-plugins            # PASS
 codex plugin add docker@hiai-agent-plugins                # PASS
 
-# intended end-user flows (not run: no binaries / not yet pushed)
-codex plugin marketplace add HiAi-gg/agent-plugins        # blocked until push (see §8)
+# intended end-user flows (not run: no binaries / docs-verified)
 copilot plugin marketplace add HiAi-gg/agent-plugins      # docs-verified
 copilot plugin install postgresql@hiai-agent-plugins      # docs-verified
 # VS Code: Command Palette → Chat: Install Plugin From Source → repo URL (docs-verified)
@@ -96,14 +95,18 @@ copilot plugin install postgresql@hiai-agent-plugins      # docs-verified
   used (would require per-release updates). Copilot/Cursor relative sources
   resolve within the same repo (no pinning needed).
 
-## 6. The 13 discovery results (Codex live)
+## 6. The 13 discovery results (Codex live, public GitHub main)
 
-`codex plugin list` after registering the marketplace reported all 13 with
-correct sources: github, agent-browser, context7, firecrawl, redis, sentry,
-supabase, figma, cloudflare, notion, docker, kubernetes, postgresql — each
-`not installed` initially, with `path 'plugins/<name>', ref 'main'`. Five were
-then installed end-to-end (agent-browser, context7, github, postgresql,
-docker); the other eight are listed/available with identical mechanics.
+`codex plugin list --available --json` after registering
+`HiAi-gg/agent-plugins` reported exactly 13 plugins, all version `0.0.2`:
+github, agent-browser, context7, firecrawl, redis, sentry, supabase, figma,
+cloudflare, notion, docker, kubernetes, postgresql — each `not installed`
+initially, with the exact `git-subdir` source (`path './plugins/<name>',
+ref 'main'`). Five were then installed end-to-end (agent-browser, context7,
+github, postgresql, docker) and ended `installed, enabled 0.0.2`; the other
+eight are listed/available with identical mechanics. The installed cache
+contained skills directories where applicable (3/3/4/5/4) and MCP metadata
+(`mcp.json` with `$schema` and servers) for the plugins that ship it.
 
 ## 7. CI drift validation
 
@@ -119,32 +122,31 @@ Both workflows parse as valid YAML (verified with PyYAML).
 
 ## 8. Remaining limitations
 
-1. **Codex public-repo add**: `codex plugin marketplace add HiAi-gg/agent-plugins`
-   is blocked until this commit is pushed to `main` (the add command requires
-   the manifest on the cloned branch). Verified equivalent via local-path
-   registration; exact error recorded in docs/MARKETPLACE_ACCEPTANCE.md.
-2. **VS Code / Cursor / Copilot live tests**: no `code`, `copilot`, or Cursor
+1. **VS Code / Cursor / Copilot live tests**: no `code`, `copilot`, or Cursor
    binary in this environment — manifest formats verified against official
    docs/source only (DOCS VERIFIED). Live UI acceptance remains on a machine
-   with those clients.
-3. **Kiro**: no Git marketplace mechanism exists; Powers/direct install only.
+   with those clients. The Codex live test above was the only client
+   exercised end-to-end, from the public `HiAi-gg/agent-plugins` `main`
+   branch, in a clean `CODEX_HOME` (removed after verification — no
+   temporary state remains).
+2. **Kiro**: no Git marketplace mechanism exists; Powers/direct install only.
    We intentionally do not fabricate marketplace support.
-4. **SHA pinning**: entries track `main`; a future release could pin SHAs for
+3. **SHA pinning**: entries track `main`; a future release could pin SHAs for
    reproducible installs (documented, not required).
-5. **Cursor plugin-layout detail**: Cursor's docs describe per-plugin
+4. **Cursor plugin-layout detail**: Cursor's docs describe per-plugin
    `.cursor-plugin/plugin.json` inside each plugin dir; our plugins ship the
    agent-plugins.org `plugin.json` at the plugin root (Cursor is an
    agent-plugins.org listed client and reads that format). Not live-tested.
 
 ## 9. GO / NO-GO per client
 
-| Client          | Decision               | Basis                                                                                                                                          |
-| --------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Codex / ChatGPT | **GO**                 | Live verified: registration (local source), 13-plugin discovery, 5 end-to-end installs; only blocker is push of the manifest (resolves itself) |
-| VS Code         | **GO (docs-verified)** | Reads the shipped Copilot `.github/plugin/marketplace.json`; official install commands documented; live UI not tested                          |
-| GitHub Copilot  | **GO (docs-verified)** | Manifest matches documented schema and official example marketplaces; CLI not run                                                              |
-| Cursor          | **GO (docs-verified)** | Manifest matches documented schema and official template; app not run                                                                          |
-| Kiro            | **CONDITIONAL GO**     | Installable as individual Powers (direct); **no marketplace claim** — do not advertise Git-marketplace support                                 |
+| Client          | Decision               | Basis                                                                                                                                                                                    |
+| --------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Codex / ChatGPT | **GO**                 | Live verified post-push from public GitHub `main`: `marketplace add HiAi-gg/agent-plugins` exit 0, 13 plugins @ 0.0.2 discovered, 5 end-to-end installs (skills + MCP metadata in cache) |
+| VS Code         | **GO (docs-verified)** | Reads the shipped Copilot `.github/plugin/marketplace.json`; official install commands documented; live UI not tested                                                                    |
+| GitHub Copilot  | **GO (docs-verified)** | Manifest matches documented schema and official example marketplaces; CLI not run                                                                                                        |
+| Cursor          | **GO (docs-verified)** | Manifest matches documented schema and official template; app not run                                                                                                                    |
+| Kiro            | **CONDITIONAL GO**     | Installable as individual Powers (direct); **no marketplace claim** — do not advertise Git-marketplace support                                                                           |
 
 ## 10. Validation summary (all run in this environment)
 
@@ -155,5 +157,7 @@ Both workflows parse as valid YAML (verified with PyYAML).
 - Official 1.0.0 schema validator: 13/13 pass; 50/50 skills frontmatter.
 - Secret scan (plugins + new files): PASS.
 - CI YAML: valid.
+- Codex live (public GitHub `main`, clean `CODEX_HOME`): marketplace add
+  exit 0, 13 plugins @ 0.0.2, 5 installs; temp state cleaned.
 - No client forks / duplicated plugin trees (diff contains only
   marketplace.json files, scripts, docs, CI).

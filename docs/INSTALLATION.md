@@ -27,12 +27,12 @@ marketplace route is preferred because the client tracks versions and updates.
 ### OpenAI Codex / ChatGPT
 
 ```bash
-# Register the marketplace once (after this commit is pushed to main):
+# Register the marketplace (verified live from public GitHub main):
 codex plugin marketplace add HiAi-gg/agent-plugins
 
 # Discover:
 codex plugin marketplace list
-codex plugin list
+codex plugin list --available --json
 
 # Install:
 codex plugin add github@hiai-agent-plugins
@@ -45,10 +45,10 @@ codex plugin marketplace upgrade
 ```
 
 Alternative (no network clone): register this checkout directly as a local
-marketplace (`codex plugin marketplace add /path/to/agent-plugins`). Until the
-manifest is pushed, that is the only way `codex plugin marketplace add` can
-see it — the exact command against `HiAi-gg/agent-plugins` requires the
-manifest on `main` (see docs/MARKETPLACE_ACCEPTANCE.md).
+marketplace (`codex plugin marketplace add /path/to/agent-plugins`). The
+public command above is verified against `main` (see
+docs/MARKETPLACE_ACCEPTANCE.md); the local path is only needed for offline
+work.
 
 Portable fallback: create a plugin folder in
 `$CODEX_HOME/plugins/<name>/plugin.json` (or the platform equivalent) and copy

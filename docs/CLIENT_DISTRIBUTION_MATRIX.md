@@ -76,13 +76,14 @@ schema URI is exactly
 ## Verification notes
 
 - **Codex live test** (this environment, `codex-cli 0.146.0`, clean
-  `CODEX_HOME`): marketplace registration via local path, `codex plugin
-marketplace list`, `codex plugin list` (13 plugins discovered), and
-  end-to-end install of `agent-browser`, `context7`, `github`, `postgresql`,
-  and `docker` — all succeeded. The exact command
-  `codex plugin marketplace add HiAi-gg/agent-plugins` fails **only** because
-  the manifest is not yet on the pushed `main` branch; it succeeds as soon as
-  this commit is pushed. See docs/MARKETPLACE_ACCEPTANCE.md for exact output.
+  `CODEX_HOME`, public GitHub `main`): `codex plugin marketplace add
+HiAi-gg/agent-plugins` exited 0, `codex plugin marketplace list` showed
+  `hiai-agent-plugins`, `codex plugin list --available --json` listed exactly
+  13 plugins all at `0.0.2`, and end-to-end install of `agent-browser`,
+  `context7`, `github`, `postgresql`, and `docker` — all succeeded
+  (`installed, enabled 0.0.2`), with skills and MCP metadata in the installed
+  cache. Temporary `CODEX_HOME` was cleaned up after verification. See
+  docs/MARKETPLACE_ACCEPTANCE.md for exact output.
 - **VS Code / Cursor / Copilot**: manifest formats and discovery paths were
   verified against official docs and vendor source; no binary/UI was
   available to exercise them live. Marked DOCS VERIFIED.

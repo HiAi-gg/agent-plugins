@@ -30,13 +30,15 @@ a fresh generation (CI-enforced). Do not hand-edit them.
 | 8   | Secret scan (plugins + new manifests/scripts)                                                 | repo CI gate + grep over `.agents/ .cursor-plugin/ .github/plugin/ scripts/*.ts` | PASS — no matches                                                                                                   |
 | 9   | CI workflow YAML validity                                                                     | `python3 -c "import yaml; yaml.safe_load(...)"` on both workflows                | PASS — valid YAML                                                                                                   |
 | 10  | No client forks / duplicated plugin trees                                                     | `git status` + diff inspection (see below)                                       | PASS — only `marketplace.json` files added under `.agents/`, `.cursor-plugin/`, `.github/plugin/`; no plugin copies |
-| 11  | Codex live clean-environment test                                                             | see Codex section below                                                          | PARTIAL (see blocker)                                                                                               |
+| 11  | Codex live clean-environment test (public GitHub main)                                        | see Codex section below                                                          | PASS — add exit 0, 13 plugins @ 0.0.2, 5 installs                                                                   |
 | 12  | VS Code live UI test                                                                          | not possible — no `code` binary in environment                                   | NOT TESTED (documented, docs-verified)                                                                              |
 
-## Codex — live CLI test (clean CODEX_HOME)
+## Codex — live CLI test (clean CODEX_HOME, public GitHub main)
 
 Environment: `codex-cli 0.146.0`, `CODEX_HOME=/tmp/opencode/codex-clean`
-(created empty). All output captured verbatim from this machine.
+(created empty). All output captured verbatim from this machine. Runs
+post-push against the public repository `HiAi-gg/agent-plugins` `main`
+(`bfc5ff8` and later).
 
 ### Attempt 1 — exact required command against the public repo
 
@@ -44,33 +46,14 @@ Environment: `codex-cli 0.146.0`, `CODEX_HOME=/tmp/opencode/codex-clean`
 codex plugin marketplace add HiAi-gg/agent-plugins
 ```
 
-Result: **FAILS with a documented blocker** (not a format problem):
+Result: **PASS — exit 0** (clones the public `main`, which now contains
+`.agents/plugins/marketplace.json`):
 
 ```
-Error: invalid marketplace file ...: marketplace root does not contain a supported manifest
+Added marketplace `hiai-agent-plugins` from https://github.com/HiAi-gg/agent-plugins.git
 ```
 
-Reason: `codex plugin marketplace add` clones the target repo and requires a
-supported marketplace manifest **on the branch it clones** (`main`). This
-commit adds `.agents/plugins/marketplace.json`; until it is pushed to
-`HiAi-gg/agent-plugins` main, the public clone has no manifest. The same
-command succeeds against the working tree (below). Pushing this commit makes
-`codex plugin marketplace add HiAi-gg/agent-plugins` work unchanged.
-
-### Attempt 2 — same manifest, registered from the working tree (local source)
-
-```bash
-codex plugin marketplace add /home/hiai/projects/blackbox-audit/workspace/agent-plugins
-```
-
-Result: **PASS** — manifest parsed, name read from the file:
-
-```
-Added marketplace `hiai-agent-plugins` from /home/hiai/projects/blackbox-audit/workspace/agent-plugins.
-Installed marketplace root: /home/hiai/projects/blackbox-audit/workspace/agent-plugins
-```
-
-### Attempt 3 — marketplace discovery
+### Attempt 2 — marketplace discovery
 
 ```bash
 codex plugin marketplace list
@@ -78,17 +61,20 @@ codex plugin marketplace list
 
 Result: **PASS** — `hiai-agent-plugins` registered.
 
-### Attempt 4 — plugin catalog discovery (all 13 entries parsed)
+### Attempt 3 — plugin catalog discovery (all 13 entries parsed)
 
 ```bash
-codex plugin list
+codex plugin list --available --json
 ```
 
-Result: **PASS** — all 13 plugins listed as `not installed` with the exact
-`git-subdir` sources (e.g. `https://github.com/HiAi-gg/agent-plugins.git,
-path 'plugins/github', ref 'main'`).
+Result: **PASS** — exactly 13 plugins listed, all version `0.0.2` (github,
+agent-browser, context7, firecrawl, redis, sentry, supabase, figma,
+cloudflare, notion, docker, kubernetes, postgresql), each with the exact
+`git-subdir` source
+(`https://github.com/HiAi-gg/agent-plugins.git, path './plugins/<name>',
+ref 'main'`).
 
-### Attempt 5 — representative end-to-end installs
+### Attempt 4 — representative end-to-end installs
 
 ```bash
 codex plugin add agent-browser@hiai-agent-plugins
@@ -107,9 +93,18 @@ Installed plugin root: .../plugins/cache/hiai-agent-plugins/agent-browser/0.0.2
 ```
 
 `codex plugin list` afterwards reports `installed, enabled 0.0.2` for all
-five. Note: Codex materializes the whole plugin directory (including authoring
-sources like `plugin.yml`/`skills-src/`, which are harmless and produce only
-the informational DOC-5003 note if a client re-validates).
+five. The installed cache contained the skills directories where applicable
+(3/3/4/5/4 across the five) and MCP metadata (`mcp.json` with `$schema` and
+servers) for the plugins that ship it. Note: Codex materializes the whole
+plugin directory (including authoring sources like `plugin.yml`/
+`skills-src/`, which are harmless and produce only the informational DOC-5003
+note if a client re-validates).
+
+### Cleanup
+
+The temporary `CODEX_HOME` was removed after verification; no temporary
+state remains in this environment. All results above were produced from the
+public `HiAi-gg/agent-plugins` repository `main` branch.
 
 ## VS Code
 
