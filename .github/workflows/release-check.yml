@@ -32,25 +32,11 @@ jobs:
       # Release reproducibility: byte-identical regeneration of plugin.json,
       # mcp.json (when present) and the FULL content of every skills/*/SKILL.md
       # from the pinned Builder 0.0.9.
+      - name: Test reproducibility comparator
+        run: bash scripts/test-repro-compare.sh
+
       - name: Builder reproducibility
-        run: |
-          set -euo pipefail
-          for plugin in github agent-browser context7 firecrawl redis sentry supabase figma cloudflare notion docker kubernetes postgresql; do
-            # Remove any stale output so the step is safe to re-run
-            # (builder 0.0.9 refuses to overwrite a non-empty directory)
-            rm -rf "/tmp/regen-$plugin"
-            npx @hiai-gg/agent-plugins-builder@0.0.9 create \
-              --config "plugins/$plugin/plugin.yml" \
-              --output "/tmp/regen-$plugin" || { echo "Regeneration failed for $plugin"; exit 1; }
-            diff -u "plugins/$plugin/plugin.json" "/tmp/regen-$plugin/plugin.json" || exit 1
-            if [ -f "/tmp/regen-$plugin/mcp.json" ]; then
-              diff -u "plugins/$plugin/mcp.json" "/tmp/regen-$plugin/mcp.json" || exit 1
-            fi
-            for skill_md in /tmp/regen-$plugin/skills/*/SKILL.md; do
-              skill_name=$(basename "$(dirname "$skill_md")")
-              diff -u "plugins/$plugin/skills/$skill_name/SKILL.md" "$skill_md" || exit 1
-            done
-          done
+        run: bash scripts/repro-check.sh
 
       # Mandatory Doctor gate: the ecosystem's canonical validator must pass on
       # every plugin before a release is considered ready.

@@ -31,7 +31,7 @@ output (plugin.json, mcp.json, skills/*/SKILL.md) without updating the
 declarative source. Regenerate instead:
 
 ```bash
-bunx @hiai-gg/agent-plugins-builder create --config plugins/<name>/plugin.yml --output <tmp> --force
+bunx @hiai-gg/agent-plugins-builder@0.0.9 create --config plugins/<name>/plugin.yml --output <tmp> --force
 ```
 
 ## Source-of-truth rules
@@ -47,7 +47,7 @@ bunx @hiai-gg/agent-plugins-builder create --config plugins/<name>/plugin.yml --
 Per plugin:
 
 ```bash
-bunx @hiai-gg/agent-plugins-builder package plugins/<name> --dry-run   # Builder validation
+bunx @hiai-gg/agent-plugins-builder@0.0.9 package plugins/<name> --dry-run   # Builder validation
 python3 scripts/validate_plugin.py plugins/<name>                      # official schemas (if present)
 ```
 

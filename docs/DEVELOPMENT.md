@@ -22,7 +22,7 @@ All 13 plugins are generated from declarative `plugin.yml` sources through
 **Agent Plugins Builder 0.0.9** (public CLI:
 
 ```bash
-bunx @hiai-gg/agent-plugins-builder --version   # 0.0.9
+bunx @hiai-gg/agent-plugins-builder@0.0.9 --version
 ```
 
 The canonical source for each plugin is:
@@ -42,17 +42,13 @@ skills/*/SKILL.md
 
 ## Regenerate → validate → compare
 
-Collection-level process (one command per plugin, or a loop):
+Run the canonical collection-level check. It regenerates every plugin with
+Builder 0.0.9 and compares `plugin.json`, optional `mcp.json`, and the paths
+and full contents of all generated `SKILL.md` files in both directions:
 
 ```bash
-for p in plugins/*/; do
-  name=$(basename "$p")
-  bunx @hiai-gg/agent-plugins-builder create \
-    --config "plugins/$name/plugin.yml" \
-    --output "/tmp/regen-$name"
-  diff "/tmp/regen-$name/plugin.json" "plugins/$name/plugin.json"
-  diff "/tmp/regen-$name/mcp.json" "plugins/$name/mcp.json"
-done
+bash scripts/test-repro-compare.sh
+bash scripts/repro-check.sh
 ```
 
 Unexpected drift is a failure. Structural output must come from Builder, not
@@ -62,7 +58,7 @@ manual edits.
 
 ```bash
 # Builder validation
-bunx @hiai-gg/agent-plugins-builder package plugins/<name> --dry-run
+bunx @hiai-gg/agent-plugins-builder@0.0.9 package plugins/<name> --dry-run
 
 # Official schema + Skills validation (scripts/validate_plugin.py when present)
 python3 scripts/validate_plugin.py plugins/<name>
