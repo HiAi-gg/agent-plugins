@@ -1,0 +1,26 @@
+.github/workflows/release-check.yml
+  h_c4ebb69e7d3702 34,48
+AGENTS.md
+  h_c4ebb69e7d3702 28,34,50,57,80
+CHANGELOG.md
+  h_c4ebb69e7d3702 11-17,20,23
+README.md
+  h_c4ebb69e7d3702 17-18,21-23,180,195,198,200,211,213
+docs/DEVELOPMENT.md
+  h_c4ebb69e7d3702 22,25,46,61
+docs/RELEASES.md
+  h_c4ebb69e7d3702 8,16
+scripts/repro-check.sh
+  h_c4ebb69e7d3702 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "b2bcaed0ff8dc48206f752774bca0c0d3a36a219",
+  "prompts": {},
+  "humans": {
+    "h_c4ebb69e7d3702": {
+      "author": "vlgalib <vlgalib@users.noreply.github.com>"
+    }
+  }
+}
