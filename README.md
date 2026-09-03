@@ -14,13 +14,13 @@ work end to end:
   — validate, diagnose, and safely fix Agent Plugins.
 
 Every plugin here is generated from a declarative `plugin.yml` source,
-byte-identical to a fresh **Builder 0.0.9** regeneration, and passes the
-**Doctor 0.0.6** validator.
+byte-identical to a fresh **Builder 0.1.0** regeneration, and passes the
+**Doctor 0.0.7** validator.
 
 [![Agent Plugins](https://img.shields.io/badge/Agent%20Plugins-1.0.0-blue)](https://agent-plugins.org/)
-[![Builder](https://img.shields.io/badge/Builder-0.0.9-purple)](https://github.com/HiAi-gg/agent-plugins-builder)
-[![Doctor](https://img.shields.io/badge/Doctor-0.0.6-teal)](https://github.com/HiAi-gg/agent-plugins-doctor)
-[![Release](https://img.shields.io/badge/Release-v0.0.2-orange)](https://github.com/HiAi-gg/agent-plugins/releases/tag/v0.0.2)
+[![Builder](https://img.shields.io/badge/Builder-0.1.0-purple)](https://github.com/HiAi-gg/agent-plugins-builder)
+[![Doctor](https://img.shields.io/badge/Doctor-0.0.7-teal)](https://github.com/HiAi-gg/agent-plugins-doctor)
+[![Release](https://img.shields.io/badge/Release-v0.0.3-orange)](https://github.com/HiAi-gg/agent-plugins/releases/tag/v0.0.3)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![Plugins](https://img.shields.io/badge/Plugins-13-green)](#plugins)
 
@@ -177,7 +177,7 @@ plugins/<name>/skills-src/<name>/*.md
 
 Edit **those** files (plus per-plugin content such as `README.md`, `LICENSE`,
 `docs/`, and postgresql's `packages/postgres-mcp`), then regenerate the
-structural output with Agent Plugins Builder 0.0.9:
+structural output with Agent Plugins Builder 0.1.0:
 
 ```bash
 bunx @hiai-gg/agent-plugins-builder create \
@@ -192,12 +192,12 @@ compare workflow and [CONTRIBUTING.md](CONTRIBUTING.md) for contribution rules.
 
 ## Build & Validate
 
-**Latest release: [v0.0.2](https://github.com/HiAi-gg/agent-plugins/releases/tag/v0.0.2).**
+**Latest release: [v0.0.3](https://github.com/HiAi-gg/agent-plugins/releases/tag/v0.0.3).**
 
 All 13 plugins are generated from declarative `plugin.yml` sources through
-[Agent Plugins Builder 0.0.9](https://github.com/HiAi-gg/agent-plugins-builder)
+[Agent Plugins Builder 0.1.0](https://github.com/HiAi-gg/agent-plugins-builder)
 and must remain reproducible from them. Every plugin also passes
-[Agent Plugins Doctor 0.0.6](https://github.com/HiAi-gg/agent-plugins-doctor)
+[Agent Plugins Doctor 0.0.7](https://github.com/HiAi-gg/agent-plugins-doctor)
 and independent validation against the official 1.0.0 schemas. See
 [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for the full workflow.
 
@@ -208,9 +208,9 @@ Every pull request and push to `main` runs
 
 - **Exactly 13 plugins** — additions, removals, and renames fail CI.
 - **Builder reproducibility** — all 13 plugins are regenerated with Builder
-  0.0.9 and `plugin.json`, `mcp.json`, and every `skills/*/SKILL.md` must be
+  0.1.0 and `plugin.json`, `mcp.json`, and every `skills/*/SKILL.md` must be
   byte-identical to the committed files.
-- **Doctor 0.0.6** — the ecosystem validator runs on all 13 plugins.
+- **Doctor 0.0.7** — the ecosystem validator runs on all 13 plugins.
 - **Secret scan** — secret-like literals are rejected across generated
   content and plugin sources.
 - **Marketplace drift + validation** — the three client marketplace manifests

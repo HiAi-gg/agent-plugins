@@ -31,7 +31,7 @@ jobs:
 
       # Release reproducibility: byte-identical regeneration of plugin.json,
       # mcp.json (when present) and the FULL content of every skills/*/SKILL.md
-      # from the pinned Builder 0.0.9.
+      # from the pinned Builder 0.1.0.
       - name: Test reproducibility comparator
         run: bash scripts/test-repro-compare.sh
 
@@ -45,7 +45,7 @@ jobs:
           fail=0
           for plugin in github agent-browser context7 firecrawl redis sentry supabase figma cloudflare notion docker kubernetes postgresql; do
             echo "Checking $plugin..."
-            npx @hiai-gg/agent-plugins-doctor@0.0.6 check plugins/$plugin || fail=1
+            npx @hiai-gg/agent-plugins-doctor@0.0.7 check plugins/$plugin || fail=1
           done
           if [ $fail -ne 0 ]; then
             echo "Doctor validation failed"

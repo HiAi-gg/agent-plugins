@@ -12,7 +12,7 @@ fail=0
 for p in "$ROOT"/plugins/*/; do
   name=$(basename "$p")
   generated="$TMP_ROOT/$name"
-  bunx @hiai-gg/agent-plugins-builder@0.0.9 create \
+  bunx @hiai-gg/agent-plugins-builder@0.1.0 create \
     --config "$p/plugin.yml" \
     --output "$generated" >/dev/null 2>&1 || { echo "FAIL(gen) $name"; fail=1; continue; }
 

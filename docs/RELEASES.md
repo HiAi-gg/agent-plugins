@@ -5,7 +5,7 @@
 Product plugins follow the 0.0.x-first convention:
 
 ```
-0.0.1 → 0.0.2 → … → 0.0.10 → 0.1.0 → 0.1.1 → …
+0.0.1 → 0.0.2 → … → 0.0.9 → 0.1.0 → 0.1.1 → …
 ```
 
 - Initial plugin release: 0.0.1.
@@ -13,7 +13,7 @@ Product plugins follow the 0.0.x-first convention:
 - Bump versions for releases, not ordinary commits.
 
 Agent Plugins Builder and Agent Plugins Doctor are independent projects with
-their own release versions (Builder 0.0.9 at the time of writing).
+their own release versions (Builder 0.1.0 at the time of writing).
 
 ## Collection versioning
 

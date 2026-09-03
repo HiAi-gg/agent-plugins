@@ -25,13 +25,13 @@ Every plugin is reproducible from:
 plugins/<name>/plugin.yml  +  plugins/<name>/skills-src/<name>/*.md
 ```
 
-through **Agent Plugins Builder 0.0.9** (public CLI:
+through **Agent Plugins Builder 0.1.0** (public CLI:
 `bunx @hiai-gg/agent-plugins-builder`). Never hand-edit generated structural
 output (plugin.json, mcp.json, skills/*/SKILL.md) without updating the
 declarative source. Regenerate instead:
 
 ```bash
-bunx @hiai-gg/agent-plugins-builder@0.0.9 create --config plugins/<name>/plugin.yml --output <tmp> --force
+bunx @hiai-gg/agent-plugins-builder@0.1.0 create --config plugins/<name>/plugin.yml --output <tmp> --force
 ```
 
 ## Source-of-truth rules
@@ -47,14 +47,14 @@ bunx @hiai-gg/agent-plugins-builder@0.0.9 create --config plugins/<name>/plugin.
 Per plugin:
 
 ```bash
-bunx @hiai-gg/agent-plugins-builder@0.0.9 package plugins/<name> --dry-run   # Builder validation
+bunx @hiai-gg/agent-plugins-builder@0.1.0 package plugins/<name> --dry-run   # Builder validation
 python3 scripts/validate_plugin.py plugins/<name>                      # official schemas (if present)
 ```
 
 Collection-wide:
 
 ```bash
-scripts/repro-check.sh         # regenerate → compare for every plugin (Builder 0.0.9)
+scripts/repro-check.sh         # regenerate → compare for every plugin (Builder 0.1.0)
 ```
 
 ## Documentation rules
@@ -77,7 +77,7 @@ scripts/repro-check.sh         # regenerate → compare for every plugin (Builde
 
 ## Version policy
 
-- Product plugins: 0.0.1 → 0.0.2 → … → 0.0.10 → 0.1.0 (0.0.x first).
+- Product plugins: 0.0.1 → 0.0.2 → … → 0.0.9 → 0.1.0 (0.0.x first).
 - Builder and Doctor keep their own independent versions.
 - Root collection CHANGELOG tracks collection-level changes only.
 

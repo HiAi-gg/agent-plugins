@@ -19,10 +19,10 @@ informational `DOC-5003` when present). See the collection README sections
 ## Canonical Builder workflow
 
 All 13 plugins are generated from declarative `plugin.yml` sources through
-**Agent Plugins Builder 0.0.9** (public CLI:
+**Agent Plugins Builder 0.1.0** (public CLI:
 
 ```bash
-bunx @hiai-gg/agent-plugins-builder@0.0.9 --version
+bunx @hiai-gg/agent-plugins-builder@0.1.0 --version
 ```
 
 The canonical source for each plugin is:
@@ -43,7 +43,7 @@ skills/*/SKILL.md
 ## Regenerate → validate → compare
 
 Run the canonical collection-level check. It regenerates every plugin with
-Builder 0.0.9 and compares `plugin.json`, optional `mcp.json`, and the paths
+Builder 0.1.0 and compares `plugin.json`, optional `mcp.json`, and the paths
 and full contents of all generated `SKILL.md` files in both directions:
 
 ```bash
@@ -58,7 +58,7 @@ manual edits.
 
 ```bash
 # Builder validation
-bunx @hiai-gg/agent-plugins-builder@0.0.9 package plugins/<name> --dry-run
+bunx @hiai-gg/agent-plugins-builder@0.1.0 package plugins/<name> --dry-run
 
 # Official schema + Skills validation (scripts/validate_plugin.py when present)
 python3 scripts/validate_plugin.py plugins/<name>

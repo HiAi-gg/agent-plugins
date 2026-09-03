@@ -8,11 +8,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3] — 2026-09-03
+
+### Added
+
+- Verified client marketplace indexes (`feat(distribution): add verified
+  client marketplace indexes`).
+
 ### Changed
 
+- Tooling pins: Agent Plugins Builder **0.1.0**, Agent Plugins Doctor **0.0.7**.
 - Root README is now the ecosystem landing page: "Build, validate, and use
   portable Agent Plugins", with Agent Plugins Ecosystem navigation linking
-  the collection, Builder (0.0.9), and Doctor (0.0.6), a 13-row plugin table
+  the collection, Builder (0.1.0), and Doctor (0.0.7), a 13-row plugin table
   with integration/status/trust labels, CI evidence, and a link to the
   v0.0.2 release.
 - All 13 plugin `homepage`/`repository` URLs fixed from the dead
