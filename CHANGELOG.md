@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.4] — 2026-09-03
+
+### Fixed
+- Collection CI reproducibility check retries Builder 0.1.0 and prints generation errors (npm race on first 0.0.3 tag).
+
 ## [0.0.3] — 2026-09-03
 
 ### Added

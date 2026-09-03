@@ -9,12 +9,30 @@ TMP_ROOT="$(mktemp -d "${TMPDIR:-/tmp}/agent-plugins-repro.XXXXXX")"
 trap 'rm -rf "$TMP_ROOT"' EXIT
 
 fail=0
+create_plugin() {
+  local config="$1" output="$2"
+  local attempt=1
+  local err
+  while [ "$attempt" -le 3 ]; do
+    err=$(bunx @hiai-gg/agent-plugins-builder@0.1.0 create \
+      --config "$config" \
+      --output "$output" 2>&1) && return 0
+    echo "retry $attempt: $err" >&2
+    attempt=$((attempt + 1))
+    sleep 2
+  done
+  echo "$err" >&2
+  return 1
+}
+
 for p in "$ROOT"/plugins/*/; do
   name=$(basename "$p")
   generated="$TMP_ROOT/$name"
-  bunx @hiai-gg/agent-plugins-builder@0.1.0 create \
-    --config "$p/plugin.yml" \
-    --output "$generated" >/dev/null 2>&1 || { echo "FAIL(gen) $name"; fail=1; continue; }
+  if ! create_plugin "$p/plugin.yml" "$generated"; then
+    echo "FAIL(gen) $name"
+    fail=1
+    continue
+  fi
 
   if bash "$HERE/compare-generated-plugin.sh" "$p" "$generated"; then
     echo "OK $name"

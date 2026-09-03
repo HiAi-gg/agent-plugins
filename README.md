@@ -20,7 +20,7 @@ byte-identical to a fresh **Builder 0.1.0** regeneration, and passes the
 [![Agent Plugins](https://img.shields.io/badge/Agent%20Plugins-1.0.0-blue)](https://agent-plugins.org/)
 [![Builder](https://img.shields.io/badge/Builder-0.1.0-purple)](https://github.com/HiAi-gg/agent-plugins-builder)
 [![Doctor](https://img.shields.io/badge/Doctor-0.0.7-teal)](https://github.com/HiAi-gg/agent-plugins-doctor)
-[![Release](https://img.shields.io/badge/Release-v0.0.3-orange)](https://github.com/HiAi-gg/agent-plugins/releases/tag/v0.0.3)
+[![Release](https://img.shields.io/badge/Release-v0.0.4-orange)](https://github.com/HiAi-gg/agent-plugins/releases/tag/v0.0.4)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![Plugins](https://img.shields.io/badge/Plugins-13-green)](#plugins)
 
@@ -192,7 +192,7 @@ compare workflow and [CONTRIBUTING.md](CONTRIBUTING.md) for contribution rules.
 
 ## Build & Validate
 
-**Latest release: [v0.0.3](https://github.com/HiAi-gg/agent-plugins/releases/tag/v0.0.3).**
+**Latest release: [v0.0.4](https://github.com/HiAi-gg/agent-plugins/releases/tag/v0.0.4).**
 
 All 13 plugins are generated from declarative `plugin.yml` sources through
 [Agent Plugins Builder 0.1.0](https://github.com/HiAi-gg/agent-plugins-builder)
